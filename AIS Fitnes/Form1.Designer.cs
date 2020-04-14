@@ -51,6 +51,7 @@
             this.button_trainer.TabIndex = 1;
             this.button_trainer.Text = "Тренера";
             this.button_trainer.UseVisualStyleBackColor = true;
+            this.button_trainer.Click += new System.EventHandler(this.button_trainer_Click);
             // 
             // button_subscription
             // 

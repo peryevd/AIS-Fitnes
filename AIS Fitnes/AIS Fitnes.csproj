@@ -67,6 +67,12 @@
     <Compile Include="addClient.Designer.cs">
       <DependentUpon>addClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="changeClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="changeClients.Designer.cs">
+      <DependentUpon>changeClients.cs</DependentUpon>
+    </Compile>
     <Compile Include="clients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,8 +93,17 @@
     <Compile Include="Subscription.Designer.cs">
       <DependentUpon>Subscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="trainers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trainers.Designer.cs">
+      <DependentUpon>trainers.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="addClient.resx">
       <DependentUpon>addClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="changeClients.resx">
+      <DependentUpon>changeClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="clients.resx">
       <DependentUpon>clients.cs</DependentUpon>
@@ -107,6 +122,9 @@
     </Compile>
     <EmbeddedResource Include="Subscription.resx">
       <DependentUpon>Subscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trainers.resx">
+      <DependentUpon>trainers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

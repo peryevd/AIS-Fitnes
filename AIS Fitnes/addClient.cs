@@ -21,6 +21,9 @@ namespace AIS_Fitnes
             InitializeComponent();
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
+
+            birth_date.Text = "dd.mm.yyyy";
+            birth_date.ForeColor = Color.Gray;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,6 +37,30 @@ namespace AIS_Fitnes
             Form clients = new clients();
             clients.Show();
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form clients = new clients();
+            clients.Show();
+            this.Close();
+        }
+
+        private void addClient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void birth_date_MouseEnter(object sender, EventArgs e)
+        {
+            birth_date.Text = null;
+            birth_date.ForeColor = Color.Black;
+        }
+
+        private void birth_date_MouseLeave(object sender, EventArgs e)
+        {
+            birth_date.Text = "dd.mm.yyyy";
+            birth_date.ForeColor = Color.Gray;
         }
     }
 }

@@ -21,6 +21,58 @@ namespace AIS_Fitnes
         {
             InitializeComponent();
 
+            LoadData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form mainmenu = Application.OpenForms[0];     
+            this.Close();
+            mainmenu.Show();
+        }
+
+        private void clients_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form addClient = new addClient();
+            addClient.Show();
+            this.Close();              
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string[] arrayClient = new string[dataGridView1.ColumnCount];
+
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+            {
+                arrayClient[i] = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[i].Value.ToString();
+            }
+
+            changeClients f = new changeClients(arrayClient);
+            f.Show();
+            this.Close();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            myConnection.Open();
+            string query = "DELETE FROM Клиенты WHERE id = " + dataGridView1.CurrentRow.Cells[0].Value;
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
+            myConnection.Close();
+
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            dataGridView1.Rows.Clear();
+
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
             string query = "SELECT * FROM Клиенты ORDER BY id";
@@ -47,30 +99,6 @@ namespace AIS_Fitnes
 
             foreach (string[] s in data)
                 dataGridView1.Rows.Add(s);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form mainmenu = Application.OpenForms[0];     
-            this.Close();
-            mainmenu.Show();
-        }
-
-        private void clients_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form addClient = new addClient();
-            addClient.Show();
-            this.Close();              
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

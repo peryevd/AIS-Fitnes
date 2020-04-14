@@ -107,6 +107,8 @@
             this.birth_date.Name = "birth_date";
             this.birth_date.Size = new System.Drawing.Size(173, 20);
             this.birth_date.TabIndex = 6;
+            this.birth_date.MouseEnter += new System.EventHandler(this.birth_date_MouseEnter);
+            this.birth_date.MouseLeave += new System.EventHandler(this.birth_date_MouseLeave);
             // 
             // label4
             // 
@@ -158,8 +160,9 @@
             this.button2.TabIndex = 13;
             this.button2.Text = "Назад";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // addClent
+            // addClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,9 +181,10 @@
             this.Controls.Add(this.last_name);
             this.Controls.Add(this.label);
             this.Controls.Add(this.first_name);
-            this.Name = "addClent";
+            this.Name = "addClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление клиента";
+            this.Load += new System.EventHandler(this.addClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

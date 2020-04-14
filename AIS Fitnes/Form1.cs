@@ -30,5 +30,10 @@ namespace AIS_Fitnes
             subscription.Show();
             this.Hide();
         }
+
+        private void button_trainer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
