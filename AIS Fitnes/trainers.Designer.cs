@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,10 +40,6 @@
             this.birth_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,41 +59,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(744, 289);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            // 
-            // first_name
-            // 
-            this.first_name.HeaderText = "Имя";
-            this.first_name.Name = "first_name";
-            // 
-            // last_name
-            // 
-            this.last_name.HeaderText = "Фамилия";
-            this.last_name.Name = "last_name";
-            // 
-            // middle_name
-            // 
-            this.middle_name.HeaderText = "Очество";
-            this.middle_name.Name = "middle_name";
-            // 
-            // birth_date
-            // 
-            this.birth_date.HeaderText = "Дата Рождения";
-            this.birth_date.Name = "birth_date";
-            // 
-            // phone
-            // 
-            this.phone.HeaderText = "Телефон";
-            this.phone.Name = "phone";
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Электронная почта";
-            this.email.Name = "email";
             // 
             // button1
             // 
@@ -131,6 +96,41 @@
             this.button4.Text = "Главное меню";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // first_name
+            // 
+            this.first_name.HeaderText = "Имя";
+            this.first_name.Name = "first_name";
+            // 
+            // last_name
+            // 
+            this.last_name.HeaderText = "Фамилия";
+            this.last_name.Name = "last_name";
+            // 
+            // middle_name
+            // 
+            this.middle_name.HeaderText = "Отчество";
+            this.middle_name.Name = "middle_name";
+            // 
+            // birth_date
+            // 
+            this.birth_date.HeaderText = "Дата Рождения";
+            this.birth_date.Name = "birth_date";
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "Телефон";
+            this.phone.Name = "phone";
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Электронная почта";
+            this.email.Name = "email";
+            // 
             // trainers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,6 +152,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn first_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn last_name;
@@ -159,9 +163,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn birth_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
     }
 }

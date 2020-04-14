@@ -13,14 +13,12 @@ namespace AIS_Fitnes
 {
     public partial class clients : Form
     {
-        public static string connectString = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source=clients1.mdb";
-        
+        public static string connectString = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source=clients1.mdb"; 
         private OleDbConnection myConnection;
 
         public clients()
         {
             InitializeComponent();
-
             LoadData();
         }
 
