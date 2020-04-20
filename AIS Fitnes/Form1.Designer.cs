@@ -31,6 +31,7 @@
             this.button_client = new System.Windows.Forms.Button();
             this.button_trainer = new System.Windows.Forms.Button();
             this.button_subscription = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_client
@@ -63,11 +64,22 @@
             this.button_subscription.UseVisualStyleBackColor = true;
             this.button_subscription.Click += new System.EventHandler(this.button_subscription_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 252);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(175, 74);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Договора";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button_subscription);
             this.Controls.Add(this.button_trainer);
             this.Controls.Add(this.button_client);
@@ -83,6 +95,7 @@
         private System.Windows.Forms.Button button_client;
         private System.Windows.Forms.Button button_trainer;
         private System.Windows.Forms.Button button_subscription;
+        private System.Windows.Forms.Button button1;
     }
 }
 

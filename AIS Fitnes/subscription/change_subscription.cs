@@ -3,50 +3,38 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Data.OleDb;
 using System.Linq;
 using System.Text;
+using System.Data.OleDb;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AIS_Fitnes
 {
-    public partial class addSubsсription : Form
+    public partial class change_subscription : Form
     {
         public static string connectString = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source=clients1.mdb";
         private OleDbConnection myConnection;
+        string[] data;
 
-        public addSubsсription()
+        public change_subscription(string[] data)
         {
             InitializeComponent();
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
+            this.data = data;
         }
 
-        private void addSubsсription_Load(object sender, EventArgs e)
+        private void change_subscription_Load(object sender, EventArgs e)
         {
+            title.Text = data[1];
+            description.Text = data[2];
+            duration.Text = data[3];
+            hall.Text = data[4];
+            price.Text = data[5];
+
             duration_add();
             hall_add();
-        }
-
-        private void add_Click(object sender, EventArgs e)
-        {
-            string querry = "INSERT INTO Абонементы (title, description, duration, hall, price) " +
-    "VALUES ('" + title.Text.ToString() + "','" + description.Text.ToString() + "','" + duration.Text.ToString() + "','" + hall.Text.ToString() + "','" + price.Text.ToString() + "')";
-            OleDbCommand command = new OleDbCommand(querry, myConnection);
-            command.ExecuteNonQuery();
-
-            myConnection.Close();
-            Form Subscription = new Subscription();
-            Subscription.Show();
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form Subscription = new Subscription();
-            Subscription.Show();
-            this.Close();
         }
 
         private void duration_add()
@@ -81,6 +69,26 @@ namespace AIS_Fitnes
 
             reader.Close();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form Subscription = new Subscription();
+            Subscription.Show();
+            this.Close();
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            string querry = "UPDATE Абонементы SET title = '" + title.Text.ToString() + "', description = '" + description.Text.ToString() + "', duration = '" + duration.Text.ToString() + "', hall = '" + hall.Text.ToString() + "', price = '" + price.Text.ToString() + "' WHERE id = " + data[0];
+
+            OleDbCommand command = new OleDbCommand(querry, myConnection);
+            command.ExecuteNonQuery();
+
+            myConnection.Close();
+            Form Subscription = new clients();
+            Subscription.Show();
+            this.Close();
         }
     }
 }

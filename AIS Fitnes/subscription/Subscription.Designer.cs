@@ -126,6 +126,7 @@
             this.cha.TabIndex = 5;
             this.cha.Text = "Изменить";
             this.cha.UseVisualStyleBackColor = true;
+            this.cha.Click += new System.EventHandler(this.cha_Click);
             // 
             // Subscription
             // 

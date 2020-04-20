@@ -4,32 +4,25 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Data.OleDb;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace AIS_Fitnes
 {
-    public partial class Subscription : Form
+    public partial class trainers : Form
     {
         public static string connectString = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source=clients1.mdb";
         private OleDbConnection myConnection;
 
-        public Subscription()
+        public trainers()
         {
             InitializeComponent();
             LoadData();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form mainmenu = Application.OpenForms[0];
-            this.Close();
-            mainmenu.Show();
-        }
-
-        private void Subscription_Load(object sender, EventArgs e)
+        private void trainers_Load(object sender, EventArgs e)
         {
 
         }
@@ -40,7 +33,7 @@ namespace AIS_Fitnes
 
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
-            string query = "SELECT * FROM Абонементы ORDER BY id";
+            string query = "SELECT * FROM Тренеры ORDER BY id";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader reader = command.ExecuteReader();
 
@@ -56,6 +49,7 @@ namespace AIS_Fitnes
                 data[data.Count - 1][3] = reader[3].ToString();
                 data[data.Count - 1][4] = reader[4].ToString();
                 data[data.Count - 1][5] = reader[5].ToString();
+                data[data.Count - 1][6] = reader[6].ToString();
             }
 
             reader.Close();
@@ -65,25 +59,14 @@ namespace AIS_Fitnes
                 dataGridView1.Rows.Add(s);
         }
 
-        private void del_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            myConnection.Open();
-            string query = "DELETE FROM Абонементы WHERE id = " + dataGridView1.CurrentRow.Cells[0].Value;
-            OleDbCommand command = new OleDbCommand(query, myConnection);
-            OleDbDataReader reader = command.ExecuteReader();
-            myConnection.Close();
-
-            LoadData();
-        }
-
-        private void add_Click(object sender, EventArgs e)
-        {
-            Form addSubsсription = new addSubsсription();
-            addSubsсription.Show();
+            Form trainers = new trainers();
+            trainers.Show();
             this.Close();
         }
 
-        private void cha_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             string[] arrayClient = new string[dataGridView1.ColumnCount];
 
@@ -92,8 +75,8 @@ namespace AIS_Fitnes
                 arrayClient[i] = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[i].Value.ToString();
             }
 
-            change_subscription f = new change_subscription(arrayClient);
-            f.Show();
+            //change_trainers f = new change_trainers(arrayClient);
+            //f.Show();
             this.Close();
         }
     }

@@ -35,5 +35,12 @@ namespace AIS_Fitnes
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form contract = new contract();
+            contract.Show();
+            this.Hide();
+        }
     }
 }

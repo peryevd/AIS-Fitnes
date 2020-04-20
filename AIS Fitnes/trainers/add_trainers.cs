@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AIS_Fitnes
+namespace AIS_Fitnes.trainers
 {
-    public partial class trainers : Form
+    public partial class add_trainers : Form
     {
-        public trainers()
+        public add_trainers()
         {
             InitializeComponent();
         }
