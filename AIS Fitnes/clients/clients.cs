@@ -53,7 +53,6 @@ namespace AIS_Fitnes
             changeClients f = new changeClients(arrayClient);
             f.Show();
             this.Close();
-
         }
 
         private void button4_Click(object sender, EventArgs e)

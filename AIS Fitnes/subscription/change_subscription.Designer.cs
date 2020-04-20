@@ -162,6 +162,7 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.title);
             this.Name = "change_subscription";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменить абонемент";
             this.Load += new System.EventHandler(this.change_subscription_Load);
             this.ResumeLayout(false);

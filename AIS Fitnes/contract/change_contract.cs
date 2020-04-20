@@ -86,5 +86,13 @@ namespace AIS_Fitnes
             contract.Show();
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            myConnection.Close();
+            Form contract = new contract();
+            contract.Show();
+            this.Close();
+        }
     }
 }

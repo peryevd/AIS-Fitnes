@@ -64,6 +64,7 @@
             this.button2.TabIndex = 37;
             this.button2.Text = "Назад";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // add
             // 
@@ -142,6 +143,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.id_client);
             this.Name = "change_contract";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменить контракт";
             this.Load += new System.EventHandler(this.change_contract_Load);
             this.ResumeLayout(false);

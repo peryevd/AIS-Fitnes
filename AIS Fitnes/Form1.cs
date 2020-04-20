@@ -33,7 +33,9 @@ namespace AIS_Fitnes
 
         private void button_trainer_Click(object sender, EventArgs e)
         {
-
+            Form master = new master();
+            master.Show();
+            this.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -41,6 +43,11 @@ namespace AIS_Fitnes
             Form contract = new contract();
             contract.Show();
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

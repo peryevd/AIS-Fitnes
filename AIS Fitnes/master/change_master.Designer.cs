@@ -1,6 +1,6 @@
-﻿namespace AIS_Fitnes.trainers
+﻿namespace AIS_Fitnes
 {
-    partial class change_trainers
+    partial class change_master
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(9, 177);
+            this.button2.Location = new System.Drawing.Point(16, 184);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 41;
@@ -56,17 +56,18 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(215, 177);
+            this.add.Location = new System.Drawing.Point(222, 184);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 23);
             this.add.TabIndex = 40;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 138);
+            this.label5.Location = new System.Drawing.Point(16, 145);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 39;
@@ -74,7 +75,7 @@
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(116, 135);
+            this.email.Location = new System.Drawing.Point(123, 142);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(173, 20);
             this.email.TabIndex = 38;
@@ -82,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 116);
+            this.label4.Location = new System.Drawing.Point(16, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 37;
@@ -90,7 +91,7 @@
             // 
             // phone
             // 
-            this.phone.Location = new System.Drawing.Point(117, 109);
+            this.phone.Location = new System.Drawing.Point(124, 116);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(173, 20);
             this.phone.TabIndex = 36;
@@ -98,7 +99,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 90);
+            this.label3.Location = new System.Drawing.Point(16, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 35;
@@ -106,7 +107,7 @@
             // 
             // birth_date
             // 
-            this.birth_date.Location = new System.Drawing.Point(117, 83);
+            this.birth_date.Location = new System.Drawing.Point(124, 90);
             this.birth_date.Name = "birth_date";
             this.birth_date.Size = new System.Drawing.Size(173, 20);
             this.birth_date.TabIndex = 34;
@@ -114,7 +115,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 64);
+            this.label2.Location = new System.Drawing.Point(16, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 33;
@@ -122,7 +123,7 @@
             // 
             // middle_name
             // 
-            this.middle_name.Location = new System.Drawing.Point(116, 57);
+            this.middle_name.Location = new System.Drawing.Point(123, 64);
             this.middle_name.Name = "middle_name";
             this.middle_name.Size = new System.Drawing.Size(173, 20);
             this.middle_name.TabIndex = 32;
@@ -130,7 +131,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 38);
+            this.label1.Location = new System.Drawing.Point(16, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 31;
@@ -138,7 +139,7 @@
             // 
             // last_name
             // 
-            this.last_name.Location = new System.Drawing.Point(117, 31);
+            this.last_name.Location = new System.Drawing.Point(124, 38);
             this.last_name.Name = "last_name";
             this.last_name.Size = new System.Drawing.Size(173, 20);
             this.last_name.TabIndex = 30;
@@ -146,7 +147,7 @@
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(9, 12);
+            this.label.Location = new System.Drawing.Point(16, 19);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(29, 13);
             this.label.TabIndex = 29;
@@ -154,16 +155,16 @@
             // 
             // first_name
             // 
-            this.first_name.Location = new System.Drawing.Point(117, 5);
+            this.first_name.Location = new System.Drawing.Point(124, 12);
             this.first_name.Name = "first_name";
             this.first_name.Size = new System.Drawing.Size(173, 20);
             this.first_name.TabIndex = 28;
             // 
-            // change_trainers
+            // change_master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 206);
+            this.ClientSize = new System.Drawing.Size(310, 219);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.add);
             this.Controls.Add(this.label5);
@@ -178,9 +179,10 @@
             this.Controls.Add(this.last_name);
             this.Controls.Add(this.label);
             this.Controls.Add(this.first_name);
-            this.Name = "change_trainers";
-            this.Text = "Изменение тренера";
-            this.Load += new System.EventHandler(this.change_trainers_Load);
+            this.Name = "change_master";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Изменить тренера";
+            this.Load += new System.EventHandler(this.change_master_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

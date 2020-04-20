@@ -61,11 +61,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="master\add_master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="master\add_master.Designer.cs">
+      <DependentUpon>add_master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="master\change_master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="master\change_master.Designer.cs">
+      <DependentUpon>change_master.cs</DependentUpon>
+    </Compile>
     <Compile Include="contract\change_contract.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="contract\change_contract.Designer.cs">
       <DependentUpon>change_contract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="master\master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="master\master.Designer.cs">
+      <DependentUpon>master.cs</DependentUpon>
     </Compile>
     <Compile Include="subscription\change_subscription.cs">
       <SubType>Form</SubType>
@@ -123,24 +141,6 @@
     <Compile Include="subscription\Subscription.Designer.cs">
       <DependentUpon>Subscription.cs</DependentUpon>
     </Compile>
-    <Compile Include="trainers\add_trainers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="trainers\add_trainers.Designer.cs">
-      <DependentUpon>add_trainers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="trainers\change_trainers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="trainers\change_trainers.Designer.cs">
-      <DependentUpon>change_trainers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="trainers\trainers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="trainers\trainers.Designer.cs">
-      <DependentUpon>trainers.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="clients\addClient.resx">
       <DependentUpon>addClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +162,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="master\add_master.resx">
+      <DependentUpon>add_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="master\change_master.resx">
+      <DependentUpon>change_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="master\master.resx">
+      <DependentUpon>master.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -179,15 +188,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subscription\Subscription.resx">
       <DependentUpon>Subscription.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="trainers\add_trainers.resx">
-      <DependentUpon>add_trainers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="trainers\change_trainers.resx">
-      <DependentUpon>change_trainers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="trainers\trainers.resx">
-      <DependentUpon>trainers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

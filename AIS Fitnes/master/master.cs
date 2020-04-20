@@ -11,20 +11,48 @@ using System.Data.OleDb;
 
 namespace AIS_Fitnes
 {
-    public partial class trainers : Form
+    public partial class master : Form
     {
         public static string connectString = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source=clients1.mdb";
         private OleDbConnection myConnection;
 
-        public trainers()
+        public master()
         {
             InitializeComponent();
-            LoadData();
+            myConnection = new OleDbConnection(connectString);
+            myConnection.Open();
         }
 
-        private void trainers_Load(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            Form add_master = new add_master();
+            add_master.Show();
+            this.Close();
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string[] arrayClient = new string[dataGridView1.ColumnCount];
+
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+            {
+                arrayClient[i] = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[i].Value.ToString();
+            }
+
+            change_master f = new change_master(arrayClient);
+            f.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            myConnection.Open();
+            string query = "DELETE FROM Тренера WHERE id = " + dataGridView1.CurrentRow.Cells[0].Value;
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
+            myConnection.Close();
+
+            LoadData();
         }
 
         private void LoadData()
@@ -33,7 +61,7 @@ namespace AIS_Fitnes
 
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
-            string query = "SELECT * FROM Тренеры ORDER BY id";
+            string query = "SELECT * FROM Тренера ORDER BY id";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader reader = command.ExecuteReader();
 
@@ -61,23 +89,14 @@ namespace AIS_Fitnes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form trainers = new trainers();
-            trainers.Show();
+            Form mainmenu = Application.OpenForms[0];
             this.Close();
+            mainmenu.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void master_Load(object sender, EventArgs e)
         {
-            string[] arrayClient = new string[dataGridView1.ColumnCount];
-
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)
-            {
-                arrayClient[i] = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[i].Value.ToString();
-            }
-
-            //change_trainers f = new change_trainers(arrayClient);
-            //f.Show();
-            this.Close();
+            LoadData();
         }
     }
 }
