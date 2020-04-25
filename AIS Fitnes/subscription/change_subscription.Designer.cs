@@ -33,13 +33,11 @@
             this.add = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.price = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.description = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.TextBox();
-            this.hall = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // duration
@@ -73,7 +71,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 121);
+            this.label4.Location = new System.Drawing.Point(16, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 37;
@@ -81,19 +79,10 @@
             // 
             // price
             // 
-            this.price.Location = new System.Drawing.Point(124, 118);
+            this.price.Location = new System.Drawing.Point(124, 92);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(173, 20);
             this.price.TabIndex = 36;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Зал";
             // 
             // label2
             // 
@@ -136,26 +125,16 @@
             this.title.Size = new System.Drawing.Size(173, 20);
             this.title.TabIndex = 29;
             // 
-            // hall
-            // 
-            this.hall.FormattingEnabled = true;
-            this.hall.Location = new System.Drawing.Point(124, 89);
-            this.hall.Name = "hall";
-            this.hall.Size = new System.Drawing.Size(173, 21);
-            this.hall.TabIndex = 41;
-            // 
             // change_subscription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(327, 202);
-            this.Controls.Add(this.hall);
             this.Controls.Add(this.duration);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.add);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.price);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.description);
@@ -177,12 +156,10 @@
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox price;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox description;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox title;
-        private System.Windows.Forms.ComboBox hall;
     }
 }

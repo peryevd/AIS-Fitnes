@@ -38,6 +38,8 @@
             this.date_start = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.id_client = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // comboBox2
@@ -68,7 +70,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(216, 176);
+            this.add.Location = new System.Drawing.Point(218, 169);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 23);
             this.add.TabIndex = 36;
@@ -79,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 89);
+            this.label3.Location = new System.Drawing.Point(10, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 35;
@@ -87,7 +89,7 @@
             // 
             // date_end
             // 
-            this.date_end.Location = new System.Drawing.Point(118, 86);
+            this.date_end.Location = new System.Drawing.Point(118, 114);
             this.date_end.Name = "date_end";
             this.date_end.Size = new System.Drawing.Size(173, 20);
             this.date_end.TabIndex = 34;
@@ -96,7 +98,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 63);
+            this.label2.Location = new System.Drawing.Point(10, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 33;
@@ -104,7 +106,7 @@
             // 
             // date_start
             // 
-            this.date_start.Location = new System.Drawing.Point(117, 60);
+            this.date_start.Location = new System.Drawing.Point(117, 88);
             this.date_start.Name = "date_start";
             this.date_start.Size = new System.Drawing.Size(173, 20);
             this.date_start.TabIndex = 32;
@@ -127,11 +129,30 @@
             this.id_client.TabIndex = 30;
             this.id_client.Text = "id клиента";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "Id зала";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(117, 61);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(173, 21);
+            this.comboBox3.TabIndex = 42;
+            // 
             // change_contract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(305, 204);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
@@ -163,5 +184,7 @@
         private System.Windows.Forms.TextBox date_start;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label id_client;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

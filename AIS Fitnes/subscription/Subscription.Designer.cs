@@ -30,15 +30,14 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.add = new System.Windows.Forms.Button();
+            this.del = new System.Windows.Forms.Button();
+            this.cha = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add = new System.Windows.Forms.Button();
-            this.del = new System.Windows.Forms.Button();
-            this.cha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,42 +60,11 @@
             this.title,
             this.description,
             this.duration,
-            this.hall,
             this.price});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(648, 289);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            // 
-            // title
-            // 
-            this.title.HeaderText = "Название";
-            this.title.Name = "title";
-            // 
-            // description
-            // 
-            this.description.HeaderText = "Описание";
-            this.description.Name = "description";
-            // 
-            // duration
-            // 
-            this.duration.HeaderText = "Длительность";
-            this.duration.Name = "duration";
-            // 
-            // hall
-            // 
-            this.hall.HeaderText = "Зал";
-            this.hall.Name = "hall";
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Цена";
-            this.price.Name = "price";
             // 
             // add
             // 
@@ -128,6 +96,31 @@
             this.cha.UseVisualStyleBackColor = true;
             this.cha.Click += new System.EventHandler(this.cha_Click);
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // title
+            // 
+            this.title.HeaderText = "Название";
+            this.title.Name = "title";
+            // 
+            // description
+            // 
+            this.description.HeaderText = "Описание";
+            this.description.Name = "description";
+            // 
+            // duration
+            // 
+            this.duration.HeaderText = "Длительность";
+            this.duration.Name = "duration";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
+            // 
             // Subscription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,14 +144,13 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button del;
+        private System.Windows.Forms.Button cha;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn duration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hall;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.Button add;
-        private System.Windows.Forms.Button del;
-        private System.Windows.Forms.Button cha;
     }
 }

@@ -31,13 +31,14 @@
             this.cha = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.add = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_clients = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_subscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,37 +70,13 @@
             this.id,
             this.id_clients,
             this.id_subscription,
+            this.id_hall,
             this.date_start,
             this.date_end});
             this.dataGridView1.Location = new System.Drawing.Point(4, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(648, 238);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            // 
-            // id_clients
-            // 
-            this.id_clients.HeaderText = "id клиента";
-            this.id_clients.Name = "id_clients";
-            // 
-            // id_subscription
-            // 
-            this.id_subscription.HeaderText = "id абонемента";
-            this.id_subscription.Name = "id_subscription";
-            // 
-            // date_start
-            // 
-            this.date_start.HeaderText = "Дата начала";
-            this.date_start.Name = "date_start";
-            // 
-            // date_end
-            // 
-            this.date_end.HeaderText = "Дата окончания";
-            this.date_end.Name = "date_end";
             // 
             // add
             // 
@@ -120,6 +97,36 @@
             this.button1.Text = "Главное меню";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // id_clients
+            // 
+            this.id_clients.HeaderText = "id клиента";
+            this.id_clients.Name = "id_clients";
+            // 
+            // id_subscription
+            // 
+            this.id_subscription.HeaderText = "id абонемента";
+            this.id_subscription.Name = "id_subscription";
+            // 
+            // id_hall
+            // 
+            this.id_hall.HeaderText = "id зала";
+            this.id_hall.Name = "id_hall";
+            // 
+            // date_start
+            // 
+            this.date_start.HeaderText = "Дата начала";
+            this.date_start.Name = "date_start";
+            // 
+            // date_end
+            // 
+            this.date_end.HeaderText = "Дата окончания";
+            this.date_end.Name = "date_end";
             // 
             // contract
             // 
@@ -150,6 +157,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_clients;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_subscription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_hall;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_start;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_end;
     }

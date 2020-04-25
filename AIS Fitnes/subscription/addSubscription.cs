@@ -26,13 +26,12 @@ namespace AIS_Fitnes
         private void addSubsсription_Load(object sender, EventArgs e)
         {
             duration_add();
-            hall_add();
         }
 
         private void add_Click(object sender, EventArgs e)
         {
-            string querry = "INSERT INTO Абонементы (title, description, duration, hall, price) " +
-    "VALUES ('" + title.Text.ToString() + "','" + description.Text.ToString() + "','" + duration.Text.ToString() + "','" + hall.Text.ToString() + "','" + price.Text.ToString() + "')";
+            string querry = "INSERT INTO Абонементы (title, description, duration, price) " +
+    "VALUES ('" + title.Text.ToString() + "','" + description.Text.ToString() + "','" + duration.Text.ToString() +  "','" + price.Text.ToString() + "')";
             OleDbCommand command = new OleDbCommand(querry, myConnection);
             command.ExecuteNonQuery();
 
@@ -60,23 +59,6 @@ namespace AIS_Fitnes
             while (reader.Read())
             {
                 duration.Items.Add(reader[0]);
-            }
-
-            reader.Close();
-
-        }
-
-        private void hall_add()
-        {
-            string query = "SELECT title FROM Залы";
-            OleDbCommand command = new OleDbCommand(query, myConnection);
-            OleDbDataReader reader = command.ExecuteReader();
-
-            List<string[]> data = new List<string[]>();
-
-            while (reader.Read())
-            {
-                hall.Items.Add(reader[0]);
             }
 
             reader.Close();

@@ -30,11 +30,9 @@ namespace AIS_Fitnes
             title.Text = data[1];
             description.Text = data[2];
             duration.Text = data[3];
-            hall.Text = data[4];
-            price.Text = data[5];
+            price.Text = data[4];
 
             duration_add();
-            hall_add();
         }
 
         private void duration_add()
@@ -54,22 +52,6 @@ namespace AIS_Fitnes
 
         }
 
-        private void hall_add()
-        {
-            string query = "SELECT title FROM Залы";
-            OleDbCommand command = new OleDbCommand(query, myConnection);
-            OleDbDataReader reader = command.ExecuteReader();
-
-            List<string[]> data = new List<string[]>();
-
-            while (reader.Read())
-            {
-                hall.Items.Add(reader[0]);
-            }
-
-            reader.Close();
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -80,13 +62,13 @@ namespace AIS_Fitnes
 
         private void add_Click(object sender, EventArgs e)
         {
-            string querry = "UPDATE Абонементы SET title = '" + title.Text.ToString() + "', description = '" + description.Text.ToString() + "', duration = '" + duration.Text.ToString() + "', hall = '" + hall.Text.ToString() + "', price = '" + price.Text.ToString() + "' WHERE id = " + data[0];
+            string querry = "UPDATE Абонементы SET title = '" + title.Text.ToString() + "', description = '" + description.Text.ToString() + "', duration = '" + duration.Text.ToString() +  "', price = '" + price.Text.ToString() + "' WHERE id = " + data[0];
 
             OleDbCommand command = new OleDbCommand(querry, myConnection);
             command.ExecuteNonQuery();
 
             myConnection.Close();
-            Form Subscription = new clients();
+            Form Subscription = new Subscription();
             Subscription.Show();
             this.Close();
         }

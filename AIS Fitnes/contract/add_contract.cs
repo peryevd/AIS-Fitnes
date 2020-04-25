@@ -26,6 +26,7 @@ namespace AIS_Fitnes
             myConnection.Open();
             client_load();
             subs_add();
+            hall_add();
         }
 
         private void client_load()
@@ -63,8 +64,8 @@ namespace AIS_Fitnes
 
         private void add_Click(object sender, EventArgs e)
         {
-            string querry = "INSERT INTO Договора (id_clients, id_subscription, date_start, date_end) " +
-            "VALUES ('" + comboBox1.Text.ToString() + "','" + comboBox2.Text.ToString() + "','" + date_start.Text.ToString() + "','" + date_end.Text.ToString() + "')";
+            string querry = "INSERT INTO Договора (id_clients, id_subscription, id_hall, date_start, date_end) " +
+            "VALUES ('" + comboBox1.Text.ToString() + "','" + comboBox2.Text.ToString() + "','" + comboBox3.Text.ToString() + "','" + date_start.Text.ToString() + "','" + date_end.Text.ToString() + "')";
             OleDbCommand command = new OleDbCommand(querry, myConnection);
             command.ExecuteNonQuery();
 
@@ -74,6 +75,21 @@ namespace AIS_Fitnes
             contract.Show();
             this.Close();
 
+        }
+        private void hall_add()
+        {
+            string query = "SELECT id FROM Залы";
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                comboBox3.Items.Add(reader[0]);
+            }
+
+            reader.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
