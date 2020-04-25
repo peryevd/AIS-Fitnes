@@ -13,7 +13,7 @@ namespace AIS_Fitnes
 {
     public partial class clients : Form
     {
-        public static string connectString = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source=clients1.mdb"; 
+        public static string connectString = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source=clients1.mdb";
         private OleDbConnection myConnection;
 
         public clients()
@@ -24,7 +24,7 @@ namespace AIS_Fitnes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form mainmenu = Application.OpenForms[0];     
+            Form mainmenu = Application.OpenForms[0];
             this.Close();
             mainmenu.Show();
         }
@@ -38,7 +38,7 @@ namespace AIS_Fitnes
         {
             Form addClient = new addClient();
             addClient.Show();
-            this.Close();              
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -105,17 +105,20 @@ namespace AIS_Fitnes
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-          
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                dataGridView1.Rows[i].Selected = false;
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    if (dataGridView1.Rows[i].Cells[j].Value != null)
+                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox1.Text))
+                        {
+                            dataGridView1.Rows[i].Selected = true;
+                            //dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                            break;
+                        }
+                }
+            }
         }
-
-        private void клиентыBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-    }
+    }  
 }

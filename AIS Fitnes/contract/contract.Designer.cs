@@ -31,14 +31,16 @@
             this.cha = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.add = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_clients = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_subscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,30 +75,10 @@
             this.id_hall,
             this.date_start,
             this.date_end});
-            this.dataGridView1.Location = new System.Drawing.Point(4, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(648, 238);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // add
-            // 
-            this.add.Location = new System.Drawing.Point(666, 12);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(130, 32);
-            this.add.TabIndex = 6;
-            this.add.Text = "Добавить";
-            this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(666, 406);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 32);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Главное меню";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // id
             // 
@@ -128,11 +110,50 @@
             this.date_end.HeaderText = "Дата окончания";
             this.date_end.Name = "date_end";
             // 
+            // add
+            // 
+            this.add.Location = new System.Drawing.Point(666, 12);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(130, 32);
+            this.add.TabIndex = 6;
+            this.add.Text = "Добавить";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(666, 406);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 32);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Главное меню";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Поиск";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(57, 9);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(195, 20);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // contract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cha);
             this.Controls.Add(this.del);
             this.Controls.Add(this.dataGridView1);
@@ -144,6 +165,7 @@
             this.Load += new System.EventHandler(this.contract_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -160,5 +182,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_hall;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_start;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_end;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
