@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,10 +40,8 @@
             this.birth_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,11 +56,53 @@
             this.middle_name,
             this.birth_date,
             this.phone,
-            this.email});
+            this.email,
+            this.hall,
+            this.price});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(744, 289);
+            this.dataGridView1.Size = new System.Drawing.Size(943, 289);
             this.dataGridView1.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(961, 432);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 32);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Главное меню";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(961, 87);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(130, 32);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Удалить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(961, 49);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(130, 32);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Изменить";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(961, 11);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(130, 32);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Добавить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // id
             // 
@@ -95,51 +139,21 @@
             this.email.HeaderText = "Электронная почта";
             this.email.Name = "email";
             // 
-            // button1
+            // hall
             // 
-            this.button1.Location = new System.Drawing.Point(762, 438);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 32);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Главное меню";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.hall.HeaderText = "Зал";
+            this.hall.Name = "hall";
             // 
-            // button4
+            // price
             // 
-            this.button4.Location = new System.Drawing.Point(762, 88);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(130, 32);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Удалить";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(762, 50);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 32);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Изменить";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(762, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 32);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Добавить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
             // 
             // master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 476);
+            this.ClientSize = new System.Drawing.Size(1100, 476);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
@@ -157,6 +171,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn first_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn last_name;
@@ -164,9 +182,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn birth_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hall;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
     }
 }

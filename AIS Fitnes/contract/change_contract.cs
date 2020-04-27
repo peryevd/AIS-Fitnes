@@ -41,15 +41,25 @@ namespace AIS_Fitnes
         {
             if (!type)
             {
-                clients_id.Text = data[1];
-                sub_id.Text = data[2];
-                hall_id.Text = data[3];
-                date_start.Text = data[4];
-                date_end.Text = data[5];
-
                 client_load();
-                subs_add();
-                hall_add();
+                clients_f.Text = data[2];
+                clients_f_SelectionChangeCommitted(sender, e);
+
+                master_load();
+                master_f.Text = data[3];
+                master_f_SelectionChangeCommitted(sender, e);
+
+                contract_add();
+                sub_title.Text = data[4];
+                sub_title_SelectionChangeCommitted(sender, e);
+
+                today.Text = data[1];
+                                   
+                date_start.Text = data[5];
+                date_end.Text = data[6];
+                all_price.Text = data[7];
+
+                add.Text = "Изменить";
             }
             else
             {
@@ -57,6 +67,9 @@ namespace AIS_Fitnes
                 today.Text = thisDay.ToString();
                 client_load();
                 master_load();
+
+                add.Text = "Создать";
+
             }
           
         }
@@ -199,15 +212,40 @@ namespace AIS_Fitnes
 
         private void add_Click(object sender, EventArgs e)
         {
-            string querry = "UPDATE Договора SET id_clients = '" + clients_id.Text.ToString() + "', id_subscription = '" + sub_id.Text.ToString() + "', id_hall = '" + hall_id.Text.ToString() + "', date_start = '" + date_start.Text.ToString() + "', date_end = '" + date_end.Text.ToString()  + "' WHERE id = " + data[0];
 
-            OleDbCommand command = new OleDbCommand(querry, myConnection);
-            command.ExecuteNonQuery();
+            if (!type)
+            {
+                string querry = "UPDATE Договора SET date_sub = '" + today.Text.ToString() + "', id_clients = '" + clients_id.Text.ToString() + "', name_clients = '" + 
+                    clients_f.Text.ToString() + "', id_master = '" + master_id.Text.ToString() + "', name_master = '" + master_f.Text.ToString() + "', id_subscription = '" + 
+                    sub_id.Text.ToString() + "', name_subscription = '" + sub_title.Text.ToString() + "', id_hall = '" + hall_id.Text.ToString() + "', name_hall = '" +
+                    hall_title.Text.ToString() + "', date_start = '" + date_start.Text.ToString() + "', date_end = '" + date_end.Text.ToString() + "', price = '" + all_price.Text.ToString() + "' WHERE id = " + data[0];
 
-            myConnection.Close();
-            Form contract = new contract();
-            contract.Show();
-            this.Close();
+                OleDbCommand command = new OleDbCommand(querry, myConnection);
+                command.ExecuteNonQuery();
+
+                myConnection.Close();
+
+                Form contract = new contract();
+                contract.Show();
+                this.Close();
+            }
+            else
+            {
+                string querry = "INSERT INTO Договора (date_sub, id_clients, name_clients, id_master, name_master, id_subscription, name_subscription, id_hall, name_hall, date_start, date_end, price) " +
+                "VALUES ('" + today.Text.ToString() + "','" + clients_id.Text.ToString() + "','" + clients_f.Text.ToString() + "','" + master_id.Text.ToString() + "','" + 
+                master_f.Text.ToString() + "','" + sub_id.Text.ToString() + "','" + sub_title.Text.ToString() + "','" + hall_id.Text.ToString() + "','" + hall_title.Text.ToString() + "','" 
+                + date_start.Text.ToString() + "','" + date_end.Text.ToString() + "','" + all_price.Text.ToString() + "')";
+
+                OleDbCommand command = new OleDbCommand(querry, myConnection);
+                command.ExecuteNonQuery();
+
+                myConnection.Close();
+
+                Form contract = new contract();
+                contract.Show();
+                this.Close();
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
