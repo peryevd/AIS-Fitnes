@@ -31,22 +31,24 @@
             this.cha = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_clients = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_subscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.add = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_sub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_clients = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_trainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_subscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cha
             // 
-            this.cha.Location = new System.Drawing.Point(666, 50);
+            this.cha.Location = new System.Drawing.Point(864, 77);
             this.cha.Name = "cha";
             this.cha.Size = new System.Drawing.Size(130, 32);
             this.cha.TabIndex = 10;
@@ -56,7 +58,7 @@
             // 
             // del
             // 
-            this.del.Location = new System.Drawing.Point(666, 88);
+            this.del.Location = new System.Drawing.Point(864, 115);
             this.del.Name = "del";
             this.del.Size = new System.Drawing.Size(130, 32);
             this.del.TabIndex = 9;
@@ -70,49 +72,21 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.id_clients,
-            this.id_subscription,
-            this.id_hall,
+            this.date_sub,
+            this.name_clients,
+            this.name_trainer,
+            this.name_subscription,
             this.date_start,
-            this.date_end});
+            this.date_end,
+            this.price});
             this.dataGridView1.Location = new System.Drawing.Point(12, 39);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(648, 238);
+            this.dataGridView1.Size = new System.Drawing.Size(846, 238);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            // 
-            // id_clients
-            // 
-            this.id_clients.HeaderText = "id клиента";
-            this.id_clients.Name = "id_clients";
-            // 
-            // id_subscription
-            // 
-            this.id_subscription.HeaderText = "id абонемента";
-            this.id_subscription.Name = "id_subscription";
-            // 
-            // id_hall
-            // 
-            this.id_hall.HeaderText = "id зала";
-            this.id_hall.Name = "id_hall";
-            // 
-            // date_start
-            // 
-            this.date_start.HeaderText = "Дата начала";
-            this.date_start.Name = "date_start";
-            // 
-            // date_end
-            // 
-            this.date_end.HeaderText = "Дата окончания";
-            this.date_end.Name = "date_end";
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(666, 12);
+            this.add.Location = new System.Drawing.Point(864, 39);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(130, 32);
             this.add.TabIndex = 6;
@@ -122,7 +96,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(666, 406);
+            this.button1.Location = new System.Drawing.Point(864, 406);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 32);
             this.button1.TabIndex = 7;
@@ -147,11 +121,52 @@
             this.textBox1.TabIndex = 12;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // date_sub
+            // 
+            this.date_sub.HeaderText = "Дата создания";
+            this.date_sub.Name = "date_sub";
+            // 
+            // name_clients
+            // 
+            this.name_clients.HeaderText = "Клиент";
+            this.name_clients.Name = "name_clients";
+            // 
+            // name_trainer
+            // 
+            this.name_trainer.HeaderText = "Тренер";
+            this.name_trainer.Name = "name_trainer";
+            // 
+            // name_subscription
+            // 
+            this.name_subscription.HeaderText = "Абонемент";
+            this.name_subscription.Name = "name_subscription";
+            // 
+            // date_start
+            // 
+            this.date_start.HeaderText = "Начало действия";
+            this.date_start.Name = "date_start";
+            // 
+            // date_end
+            // 
+            this.date_end.HeaderText = "Конец действия";
+            this.date_end.Name = "date_end";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
+            // 
             // contract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1002, 450);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cha);
@@ -176,13 +191,15 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_clients;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_subscription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_hall;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_start;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_end;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_sub;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_clients;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_trainer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_subscription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_start;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_end;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
     }
 }

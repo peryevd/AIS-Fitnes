@@ -16,31 +16,54 @@ namespace AIS_Fitnes
         public static string connectString = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source=clients1.mdb";
         private OleDbConnection myConnection;
         string[] data;
+        bool type;
+        string[] hall_desc;
+        string[] contract_desc;
 
         public change_contract(string[] data)
         {
             InitializeComponent();
+            type = false;
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
             this.data = data;
         }
 
+        public change_contract()
+        {
+            InitializeComponent();
+            myConnection = new OleDbConnection(connectString);
+            myConnection.Open();
+            type = true;
+        }
+
         private void change_contract_Load(object sender, EventArgs e)
         {
-            comboBox1.Text = data[1];
-            comboBox2.Text = data[2];
-            comboBox3.Text = data[3];
-            date_start.Text = data[4];
-            date_end.Text = data[5];
+            if (!type)
+            {
+                clients_id.Text = data[1];
+                sub_id.Text = data[2];
+                hall_id.Text = data[3];
+                date_start.Text = data[4];
+                date_end.Text = data[5];
 
-            client_load();
-            subs_add();
-            hall_add();
+                client_load();
+                subs_add();
+                hall_add();
+            }
+            else
+            {
+                DateTime thisDay = DateTime.Today;
+                today.Text = thisDay.ToString();
+                client_load();
+                master_load();
+            }
+          
         }
 
         private void client_load()
         {
-            string query = "SELECT id FROM Клиенты";
+            string query = "SELECT id, first_name, last_name, middle_name FROM Клиенты";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader reader = command.ExecuteReader();
 
@@ -48,7 +71,10 @@ namespace AIS_Fitnes
 
             while (reader.Read())
             {
-                comboBox1.Items.Add(reader[0]);
+                clients_id.Items.Add(reader[0]);
+                clients_n.Items.Add(reader[1]);
+                clients_f.Items.Add(reader[2]);
+                clients_o.Items.Add(reader[3]);
             }
 
             reader.Close();
@@ -64,7 +90,7 @@ namespace AIS_Fitnes
 
             while (reader.Read())
             {
-                comboBox2.Items.Add(reader[0]);
+                sub_id.Items.Add(reader[0]);
             }
 
             reader.Close();
@@ -73,7 +99,81 @@ namespace AIS_Fitnes
 
         private void hall_add()
         {
-            string query = "SELECT id FROM Залы";
+            int i = 0;
+            string query = "SELECT id, title, description FROM Залы";
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            hall_desc = new string[100];
+
+            while (reader.Read())
+            {
+                hall_id.Items.Add(reader[0]);
+                hall_title.Items.Add(reader[1]);
+                hall_desc[i] = reader[2].ToString();
+                i++;
+            }
+
+            reader.Close();
+        }
+
+        private void hall_add_id(string title)
+        {
+            string query = "SELECT * FROM Залы WHERE title = '" + title + "'";
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
+
+            hall_desc = new string[1];
+
+            List<string[]> data = new List<string[]>();
+
+            hall_id.Items.Clear();
+            hall_title.Items.Clear();
+
+            while (reader.Read())
+            {
+                hall_id.Items.Add(reader[0]);
+                hall_title.Items.Add(reader[1].ToString());
+                hall_desc[0] = reader[2].ToString();
+            }
+
+            hall_id.SelectedIndex = 0;
+            hall_title.SelectedIndex = 0;
+            hall_description.Text = hall_desc[0];
+
+            reader.Close();
+        }
+
+        private void contract_add()
+        {
+            int i = 0;
+            string query = "SELECT * FROM Абонементы";
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            contract_desc = new string[100];
+
+            while (reader.Read())
+            {
+                sub_id.Items.Add(reader[0]);
+                sub_title.Items.Add(reader[1]);
+                contract_desc[i] = reader[2].ToString();
+                sub_duration.Items.Add(reader[3]);
+                sub_price.Items.Add(reader[4]);
+
+                i++;
+            }
+
+            reader.Close();
+        }
+
+        private void master_load()
+        {
+            string query = "SELECT id, first_name, last_name, middle_name, hall, price FROM Тренера";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader reader = command.ExecuteReader();
 
@@ -81,7 +181,12 @@ namespace AIS_Fitnes
 
             while (reader.Read())
             {
-                comboBox3.Items.Add(reader[0]);
+                master_id.Items.Add(reader[0]);
+                master_n.Items.Add(reader[1]);
+                master_f.Items.Add(reader[2]);
+                master_o.Items.Add(reader[3]);
+                master_hall.Items.Add(reader[4]);
+                master_price.Items.Add(reader[5]);
             }
 
             reader.Close();
@@ -94,7 +199,7 @@ namespace AIS_Fitnes
 
         private void add_Click(object sender, EventArgs e)
         {
-            string querry = "UPDATE Договора SET id_clients = '" + comboBox1.Text.ToString() + "', id_subscription = '" + comboBox2.Text.ToString() + "', id_hall = '" + comboBox3.Text.ToString() + "', date_start = '" + date_start.Text.ToString() + "', date_end = '" + date_end.Text.ToString()  + "' WHERE id = " + data[0];
+            string querry = "UPDATE Договора SET id_clients = '" + clients_id.Text.ToString() + "', id_subscription = '" + sub_id.Text.ToString() + "', id_hall = '" + hall_id.Text.ToString() + "', date_start = '" + date_start.Text.ToString() + "', date_end = '" + date_end.Text.ToString()  + "' WHERE id = " + data[0];
 
             OleDbCommand command = new OleDbCommand(querry, myConnection);
             command.ExecuteNonQuery();
@@ -111,6 +216,182 @@ namespace AIS_Fitnes
             Form contract = new contract();
             contract.Show();
             this.Close();
+        }
+
+        private void date_start_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                groupBox_hall.Enabled = true;
+
+                master_id.Enabled = false;
+                master_n.Enabled = false;
+                master_f.Enabled = false;
+                master_o.Enabled = false;
+
+                hall_add();
+            }
+            else
+            {
+                groupBox_hall.Enabled = false;
+
+                master_id.Enabled = true;
+                master_n.Enabled = true;
+                master_f.Enabled = true;
+                master_o.Enabled = true;
+            }
+        }
+
+        private void client_id_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            clients_n.SelectedIndex = clients_id.SelectedIndex;
+            clients_f.SelectedIndex = clients_id.SelectedIndex;
+            clients_o.SelectedIndex = clients_id.SelectedIndex;
+
+            groupBox_master.Enabled = true;
+        }
+
+        private void clients_f_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            clients_id.SelectedIndex = clients_f.SelectedIndex;
+            clients_n.SelectedIndex = clients_f.SelectedIndex;
+            clients_o.SelectedIndex = clients_f.SelectedIndex;
+        }
+
+        private void clients_n_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            clients_id.SelectedIndex = clients_n.SelectedIndex;
+            clients_f.SelectedIndex = clients_n.SelectedIndex;
+            clients_o.SelectedIndex = clients_n.SelectedIndex;
+        }
+
+        private void clients_o_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            clients_id.SelectedIndex = clients_o.SelectedIndex;
+            clients_f.SelectedIndex = clients_o.SelectedIndex;
+            clients_n.SelectedIndex = clients_o.SelectedIndex;
+        }
+
+        private void master_id_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            master_n.SelectedIndex = master_id.SelectedIndex;
+            master_f.SelectedIndex = master_id.SelectedIndex;
+            master_o.SelectedIndex = master_id.SelectedIndex;
+            master_hall.SelectedIndex = master_id.SelectedIndex;
+            master_price.SelectedIndex = master_id.SelectedIndex;
+
+            hall_add_id(master_hall.Text.ToString());
+            groupBox_contract.Enabled = true;
+            contract_add();
+        }
+
+        private void groupBox_master_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void master_f_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            master_n.SelectedIndex = master_f.SelectedIndex;
+            master_id.SelectedIndex = master_f.SelectedIndex;
+            master_o.SelectedIndex = master_f.SelectedIndex;
+            master_hall.SelectedIndex = master_f.SelectedIndex;
+            master_price.SelectedIndex = master_f.SelectedIndex;
+
+            hall_add_id(master_hall.Text.ToString());
+        }
+
+        private void master_n_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            master_f.SelectedIndex = master_n.SelectedIndex;
+            master_id.SelectedIndex = master_n.SelectedIndex;
+            master_o.SelectedIndex = master_n.SelectedIndex;
+            master_hall.SelectedIndex = master_n.SelectedIndex;
+            master_price.SelectedIndex = master_n.SelectedIndex;
+
+            hall_add_id(master_hall.Text.ToString());
+        }
+
+        private void master_o_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            master_f.SelectedIndex = master_o.SelectedIndex;
+            master_id.SelectedIndex = master_o.SelectedIndex;
+            master_n.SelectedIndex = master_o.SelectedIndex;
+            master_hall.SelectedIndex = master_o.SelectedIndex;
+            master_price.SelectedIndex = master_o.SelectedIndex;
+
+            hall_add_id(master_hall.Text.ToString());
+        }
+
+        private void hall_id_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            hall_title.SelectedIndex = hall_id.SelectedIndex;
+            hall_description.Text = hall_desc[hall_id.SelectedIndex];
+
+            groupBox_contract.Enabled = true;
+            contract_add();
+        }
+
+        private void hall_title_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            hall_id.SelectedIndex = hall_title.SelectedIndex;
+            hall_description.Text = hall_desc[hall_title.SelectedIndex];
+
+            groupBox_contract.Enabled = true;
+            contract_add();
+        }
+
+        private void sub_id_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            sub_title.SelectedIndex = sub_id.SelectedIndex;
+            sub_description.Text = contract_desc[sub_id.SelectedIndex];
+            sub_duration.SelectedIndex = sub_id.SelectedIndex;
+            sub_price.SelectedIndex = sub_id.SelectedIndex;
+        }
+
+        private void sub_title_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            sub_id.SelectedIndex = sub_title.SelectedIndex;
+            sub_description.Text = contract_desc[sub_title.SelectedIndex];
+            sub_duration.SelectedIndex = sub_title.SelectedIndex;
+            sub_price.SelectedIndex = sub_title.SelectedIndex;
+        }
+
+        private void date_start_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+        }
+
+        private void date_start_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateTime date = new DateTime();
+            date = Convert.ToDateTime(date_start.Text.ToString());
+            date_end.Text = date.AddMonths(1).ToString();
+
+            if (master_price.Text != null)
+            {
+                all_price.Text = (Convert.ToInt32(master_price.Text) + Convert.ToInt32(sub_price.Text)).ToString();
+            }
+            else
+            {
+                all_price.Text = sub_price.Text.ToString();
+            }
+
+            Console.WriteLine(sub_price.Text);
         }
     }
 }

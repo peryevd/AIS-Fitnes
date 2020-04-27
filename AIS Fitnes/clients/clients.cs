@@ -36,8 +36,8 @@ namespace AIS_Fitnes
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form addClient = new addClient();
-            addClient.Show();
+            changeClients f = new changeClients();
+            f.Show();
             this.Close();
         }
 
@@ -80,7 +80,7 @@ namespace AIS_Fitnes
 
             while (reader.Read())
             {
-                data.Add(new string[7]);
+                data.Add(new string[9]);
 
                 data[data.Count - 1][0] = reader[0].ToString();
                 data[data.Count - 1][1] = reader[1].ToString();
@@ -89,6 +89,8 @@ namespace AIS_Fitnes
                 data[data.Count - 1][4] = reader[4].ToString();
                 data[data.Count - 1][5] = reader[5].ToString();
                 data[data.Count - 1][6] = reader[6].ToString();
+                data[data.Count - 1][7] = reader[7].ToString();
+                data[data.Count - 1][8] = reader[8].ToString();
             }
 
             reader.Close();

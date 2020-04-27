@@ -41,14 +41,16 @@ namespace AIS_Fitnes
 
             while (reader.Read())
             {
-                data.Add(new string[6]);
+                data.Add(new string[13]);
 
                 data[data.Count - 1][0] = reader[0].ToString();
                 data[data.Count - 1][1] = reader[1].ToString();
-                data[data.Count - 1][2] = reader[2].ToString();
-                data[data.Count - 1][3] = reader[3].ToString();
-                data[data.Count - 1][4] = reader[4].ToString();
-                data[data.Count - 1][5] = reader[5].ToString();
+                data[data.Count - 1][2] = reader[3].ToString();
+                data[data.Count - 1][3] = reader[5].ToString();
+                data[data.Count - 1][4] = reader[7].ToString();
+                data[data.Count - 1][5] = reader[10].ToString();
+                data[data.Count - 1][6] = reader[11].ToString();
+                data[data.Count - 1][7] = reader[12].ToString();
             }
 
             reader.Close();
@@ -60,8 +62,8 @@ namespace AIS_Fitnes
 
         private void add_Click(object sender, EventArgs e)
         {
-            Form add_contract = new add_contract();
-            add_contract.Show();
+            change_contract f = new change_contract();
+            f.Show();
             this.Close();
         }
 
