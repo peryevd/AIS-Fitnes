@@ -38,8 +38,10 @@
             this.last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middle_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birth_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,8 +57,10 @@
             this.last_name,
             this.middle_name,
             this.birth_date,
+            this.sex,
             this.phone,
             this.email,
+            this.address,
             this.hall,
             this.price});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
@@ -129,6 +133,11 @@
             this.birth_date.HeaderText = "Дата Рождения";
             this.birth_date.Name = "birth_date";
             // 
+            // sex
+            // 
+            this.sex.HeaderText = "Пол";
+            this.sex.Name = "sex";
+            // 
             // phone
             // 
             this.phone.HeaderText = "Телефон";
@@ -138,6 +147,11 @@
             // 
             this.email.HeaderText = "Электронная почта";
             this.email.Name = "email";
+            // 
+            // address
+            // 
+            this.address.HeaderText = "Адрес";
+            this.address.Name = "address";
             // 
             // hall
             // 
@@ -180,8 +194,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn last_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn middle_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn birth_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sex;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn hall;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
     }
