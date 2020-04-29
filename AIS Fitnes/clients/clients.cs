@@ -57,13 +57,21 @@ namespace AIS_Fitnes
 
         private void button4_Click(object sender, EventArgs e)
         {
-            myConnection.Open();
-            string query = "DELETE FROM Клиенты WHERE id = " + dataGridView1.CurrentRow.Cells[0].Value;
-            OleDbCommand command = new OleDbCommand(query, myConnection);
-            OleDbDataReader reader = command.ExecuteReader();
-            myConnection.Close();
 
-            LoadData();
+            const string message = "Вы уверены что хотите удалить элемент?";
+            const string caption = "Form Closing";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                myConnection.Open();
+                string query = "DELETE FROM Клиенты WHERE id = " + dataGridView1.CurrentRow.Cells[0].Value;
+                OleDbCommand command = new OleDbCommand(query, myConnection);
+                OleDbDataReader reader = command.ExecuteReader();
+                myConnection.Close();
+
+                LoadData();
+            }         
         }
 
         private void LoadData()
@@ -121,6 +129,11 @@ namespace AIS_Fitnes
                         }
                 }
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button3_Click(sender, e);
         }
     }  
 }

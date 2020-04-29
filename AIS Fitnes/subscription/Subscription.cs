@@ -95,5 +95,10 @@ namespace AIS_Fitnes
             f.Show();
             this.Close();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cha_Click(sender, e);
+        }
     }
 }

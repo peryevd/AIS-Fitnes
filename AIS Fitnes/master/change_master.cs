@@ -102,7 +102,7 @@ namespace AIS_Fitnes
 
         private void load_hall()
         {
-            int i = 0;
+           // int i = 0;
             string query = "SELECT title FROM Залы";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader reader = command.ExecuteReader();

@@ -31,10 +31,6 @@
             this.cha = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.add = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_sub = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_clients = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +39,10 @@
             this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,43 +83,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(846, 238);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // add
-            // 
-            this.add.Location = new System.Drawing.Point(864, 39);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(130, 32);
-            this.add.TabIndex = 6;
-            this.add.Text = "Добавить";
-            this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(864, 406);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 32);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Главное меню";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Поиск";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(57, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 20);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // id
             // 
@@ -160,6 +124,43 @@
             // 
             this.price.HeaderText = "Цена";
             this.price.Name = "price";
+            // 
+            // add
+            // 
+            this.add.Location = new System.Drawing.Point(864, 39);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(130, 32);
+            this.add.TabIndex = 6;
+            this.add.Text = "Добавить";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(864, 406);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 32);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Главное меню";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Поиск";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(57, 9);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(195, 20);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // contract
             // 

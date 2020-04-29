@@ -102,5 +102,10 @@ namespace AIS_Fitnes
         {
             LoadData();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button3_Click(sender, e);
+        }
     }
 }

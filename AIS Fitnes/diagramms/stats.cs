@@ -32,7 +32,22 @@ namespace AIS_Fitnes
             
         }
 
-        private void draw(List<string> data2, List<int> count_subscr, bool type)
+        private void secure()
+        {
+            while (data2.Count != count_subscr.Count)
+            {
+                if (data2.Count > count_subscr.Count)
+                {
+                    data2.RemoveAt(data2.Count-1);
+                }
+                else
+                {
+                    count_subscr.RemoveAt(count_subscr.Count-1);
+                }
+            }                      
+        }
+
+        private void draw(List<string> data2, List<int> count_subscr, int type)
         {
             Chart1.Series.Clear();
             // Форматировать диаграмму
@@ -47,33 +62,52 @@ namespace AIS_Fitnes
             // Форматировать область диаграммы
             Chart1.ChartAreas[0].BackColor = Color.Wheat;
 
-            // Добавить и форматировать заголовок
-            Chart1.Titles.Clear();
-            Chart1.Titles.Add("Купленные абонементы");
+            //Добавить и форматировать заголовок
             //Chart1.Titles[1].Font = new Font("Utopia", 16);
 
-            if (type)
+            if (type == 0)
             {
                 Chart1.Series.Add(new Series("ColumnSeries")
                 {
                     ChartType = SeriesChartType.Pie
-                });
+
+                }) ;
+                Chart1.ChartAreas[0].Area3DStyle.Enable3D = false;
+
+                Chart1.Titles.Clear();
+                Chart1.Titles.Add("Купленные абонементы");
             }
-            else
+            if (type == 1)
             {
                 Chart1.Series.Add(new Series("ColumnSeries")
                 {
                     
                 });
+                Chart1.ChartAreas[0].Area3DStyle.Enable3D = false;
+
+                Chart1.Titles.Clear();
+                Chart1.Titles.Add("Заполненость залов");
             }
-           
+            if (type == 2)
+            {
+                Chart1.Series.Add(new Series("ColumnSeries")
+                {
+                    ChartType = SeriesChartType.Line
+                });
+                Chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
+
+                Chart1.Titles.Clear();
+                Chart1.Titles.Add("Занятость тренеров");
+            }
 
             // Salary series data
             //double[] yValues = { 2222, 2724, 2720, 3263, 2445 };
             //string[] xValues = { "France", "Canada", "Germany", "USA", "Italy" };
+
+            secure();
             Chart1.Series["ColumnSeries"].Points.DataBindXY(data2, count_subscr);
 
-            Chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
+            //Chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
         }
 
         private void LoadDataSub()
@@ -92,19 +126,26 @@ namespace AIS_Fitnes
             reader.Close();
             myConnection.Close();
 
+            count_subscription();
+            data1 = data1.Distinct().ToList();
+
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
-            query = "SELECT title FROM Абонементы ORDER BY id";
-            command = new OleDbCommand(query, myConnection);
-            reader = command.ExecuteReader();
-
-            while (reader.Read())
+            for (int i = 0; i < data1.Count; i++)
             {
-                data2.Add(Convert.ToString(reader[0]));
+                query = "SELECT title FROM Абонементы WHERE id = " + data1[i];
+                command = new OleDbCommand(query, myConnection);
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data2.Add(Convert.ToString(reader[0]));
+                }
             }
 
             reader.Close();
             myConnection.Close();
+
         }
 
         private void LoadDataHall()
@@ -123,16 +164,60 @@ namespace AIS_Fitnes
             reader.Close();
             myConnection.Close();
 
+            count_subscription();
+            data1 = data1.Distinct().ToList();
+
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
-            query = "SELECT title FROM Залы ORDER BY id";
-            command = new OleDbCommand(query, myConnection);
-            reader = command.ExecuteReader();
+            for (int i = 0; i < data1.Count; i++)
+            {
+                query = "SELECT title FROM Залы WHERE id = " + data1[i];
+                command = new OleDbCommand(query, myConnection);
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data2.Add(Convert.ToString(reader[0]));
+                }
+            }
+
+            reader.Close();
+            myConnection.Close();
+        }
+
+        private void LoadDataMaster()
+        {
+            myConnection = new OleDbConnection(connectString);
+            myConnection.Open();
+            string query = "SELECT id_master FROM Договора ORDER BY id";
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                data2.Add(Convert.ToString(reader[0]));
+                data1.Add(Convert.ToInt32(reader[0]));
             }
+
+            reader.Close();
+            myConnection.Close();
+
+            count_subscription();
+            data1 = data1.Distinct().ToList();
+
+            myConnection = new OleDbConnection(connectString);
+            myConnection.Open();
+
+            for (int i = 0; i < data1.Count; i++)
+            {
+                query = "SELECT last_name FROM Тренера WHERE id = " + data1[i];
+                command = new OleDbCommand(query, myConnection);
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data2.Add(Convert.ToString(reader[0]));
+                }
+            }           
 
             reader.Close();
             myConnection.Close();
@@ -159,8 +244,8 @@ namespace AIS_Fitnes
             count_subscr.Clear();
 
             LoadDataSub();
-            count_subscription();
-            draw(data2, count_subscr, false);
+    
+            draw(data2, count_subscr, 0);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -177,8 +262,19 @@ namespace AIS_Fitnes
             count_subscr.Clear();
 
             LoadDataHall();
-            count_subscription();
-            draw(data2, count_subscr, true);
+
+            draw(data2, count_subscr, 2);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            data1.Clear();
+            data2.Clear();
+            count_subscr.Clear();
+
+            LoadDataMaster();
+
+            draw(data2, count_subscr, 1);
         }
     }
 }

@@ -116,5 +116,10 @@ namespace AIS_Fitnes
                 }
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cha_Click(sender, e);
+        }
     }
 }

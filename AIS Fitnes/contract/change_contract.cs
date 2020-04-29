@@ -59,6 +59,10 @@ namespace AIS_Fitnes
                 date_end.Text = data[6];
                 all_price.Text = data[7];
 
+                groupBox_master.Enabled = true;
+                groupBox_contract.Enabled = true;
+                groupBox_hall.Enabled = true;
+
                 add.Text = "Изменить";
             }
             else
