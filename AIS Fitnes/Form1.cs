@@ -56,5 +56,12 @@ namespace AIS_Fitnes
             stats.Show();
             this.Hide();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form hall = new hall();
+            hall.Show();
+            this.Hide();
+        }
     }
 }

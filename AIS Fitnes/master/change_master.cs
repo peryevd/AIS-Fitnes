@@ -92,6 +92,7 @@ namespace AIS_Fitnes
 
                 OleDbCommand command = new OleDbCommand(querry, myConnection);
                 command.ExecuteNonQuery();
+                updateAll();
 
                 myConnection.Close();
                 Form master = new master();
@@ -121,5 +122,12 @@ namespace AIS_Fitnes
         {
 
         }
+        private void updateAll()
+        {
+            string querry = "UPDATE Договора SET name_master = '" + last_name.Text.ToString() + "' WHERE id_master = " + data[0];
+            OleDbCommand command = new OleDbCommand(querry, myConnection);
+            command.ExecuteNonQuery();
+        }
+
     }
 }

@@ -62,6 +62,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="hall\hall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hall\hall.Designer.cs">
+      <DependentUpon>hall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hall\hall_change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hall\hall_change.Designer.cs">
+      <DependentUpon>hall_change.cs</DependentUpon>
+    </Compile>
     <Compile Include="master\add_master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +183,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hall\hall.resx">
+      <DependentUpon>hall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hall\hall_change.resx">
+      <DependentUpon>hall_change.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="master\add_master.resx">
       <DependentUpon>add_master.cs</DependentUpon>

@@ -86,6 +86,7 @@ namespace AIS_Fitnes
                 OleDbCommand command = new OleDbCommand(querry, myConnection);
                 command.ExecuteNonQuery();
 
+                updateAll();
                 myConnection.Close();
                 Form clients = new clients();
                 clients.Show();
@@ -107,6 +108,13 @@ namespace AIS_Fitnes
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void updateAll()
+        {
+            string querry = "UPDATE Договора SET name_clients = '" + last_name.Text.ToString()  + "' WHERE id_clients = " + data[0];
+            OleDbCommand command = new OleDbCommand(querry, myConnection);
+            command.ExecuteNonQuery();
         }
     }
 }

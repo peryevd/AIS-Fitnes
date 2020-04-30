@@ -67,10 +67,19 @@ namespace AIS_Fitnes
             OleDbCommand command = new OleDbCommand(querry, myConnection);
             command.ExecuteNonQuery();
 
+            updateAll();
+
             myConnection.Close();
             Form Subscription = new Subscription();
             Subscription.Show();
             this.Close();
+        }
+
+        private void updateAll()
+        {
+            string querry = "UPDATE Договора SET name_subscription = '" + title.Text.ToString() + "' WHERE id_subscription = " + data[0];
+            OleDbCommand command = new OleDbCommand(querry, myConnection);
+            command.ExecuteNonQuery();
         }
     }
 }
