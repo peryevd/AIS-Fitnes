@@ -41,18 +41,20 @@
             this.label = new System.Windows.Forms.Label();
             this.first_name = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.birth_date = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.sex = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.birth_date = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.phone = new System.Windows.Forms.MaskedTextBox();
             this.address = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.price = new System.Windows.Forms.MaskedTextBox();
+            this.hall = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.hall = new System.Windows.Forms.ComboBox();
-            this.price = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -60,21 +62,26 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(10, 426);
+            this.button2.BackgroundImage = global::AIS_Fitnes.Properties.Resources.ui;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(12, 426);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(50, 50);
             this.button2.TabIndex = 41;
-            this.button2.Text = "Назад";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(401, 426);
+            this.add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.add.FlatAppearance.BorderSize = 0;
+            this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add.Location = new System.Drawing.Point(426, 426);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(75, 23);
+            this.add.Size = new System.Drawing.Size(50, 50);
             this.add.TabIndex = 40;
-            this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
@@ -181,24 +188,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Личные данные";
             // 
-            // birth_date
-            // 
-            this.birth_date.Location = new System.Drawing.Point(114, 115);
-            this.birth_date.Mask = "00/00/0000";
-            this.birth_date.Name = "birth_date";
-            this.birth_date.Size = new System.Drawing.Size(66, 20);
-            this.birth_date.TabIndex = 36;
-            this.birth_date.ValidatingType = typeof(System.DateTime);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(292, 118);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 13);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Пол";
-            // 
             // sex
             // 
             this.sex.FormattingEnabled = true;
@@ -209,6 +198,24 @@
             this.sex.Name = "sex";
             this.sex.Size = new System.Drawing.Size(121, 21);
             this.sex.TabIndex = 38;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(292, 118);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Пол";
+            // 
+            // birth_date
+            // 
+            this.birth_date.Location = new System.Drawing.Point(114, 115);
+            this.birth_date.Mask = "00/00/0000";
+            this.birth_date.Name = "birth_date";
+            this.birth_date.Size = new System.Drawing.Size(66, 20);
+            this.birth_date.TabIndex = 36;
+            this.birth_date.ValidatingType = typeof(System.DateTime);
             // 
             // groupBox2
             // 
@@ -264,6 +271,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Профиль";
             // 
+            // price
+            // 
+            this.price.Location = new System.Drawing.Point(112, 55);
+            this.price.Mask = "00000";
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(54, 20);
+            this.price.TabIndex = 40;
+            // 
+            // hall
+            // 
+            this.hall.FormattingEnabled = true;
+            this.hall.Location = new System.Drawing.Point(112, 29);
+            this.hall.Name = "hall";
+            this.hall.Size = new System.Drawing.Size(336, 21);
+            this.hall.TabIndex = 39;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -282,33 +305,38 @@
             this.label10.TabIndex = 39;
             this.label10.Text = "Цена";
             // 
-            // hall
+            // label8
             // 
-            this.hall.FormattingEnabled = true;
-            this.hall.Location = new System.Drawing.Point(112, 29);
-            this.hall.Name = "hall";
-            this.hall.Size = new System.Drawing.Size(336, 21);
-            this.hall.TabIndex = 39;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(18, 477);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 45;
+            this.label8.Text = "Назад";
             // 
-            // price
+            // label11
             // 
-            this.price.Location = new System.Drawing.Point(112, 55);
-            this.price.Mask = "99999999";
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(54, 20);
-            this.price.TabIndex = 40;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(423, 479);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(39, 13);
+            this.label11.TabIndex = 46;
+            this.label11.Text = "Назад";
             // 
             // change_master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(488, 458);
+            this.ClientSize = new System.Drawing.Size(488, 499);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.add);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "change_master";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Тренер";
@@ -320,6 +348,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -350,5 +379,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox price;
         private System.Windows.Forms.ComboBox hall;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label11;
     }
 }

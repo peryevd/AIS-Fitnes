@@ -22,7 +22,9 @@ namespace AIS_Fitnes
             InitializeComponent();
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
-            add.Text = "Сохранить";
+            label_ch.Text = "Изменить";
+            add.BackgroundImage = Properties.Resources.edit;
+            this.Text = "Изменение клиента";
             this.data = data;
             type = false;
         }
@@ -30,7 +32,9 @@ namespace AIS_Fitnes
         public changeClients()
         {
             InitializeComponent();
-            add.Text = "Добавить";
+            label_ch.Text = "Добавить";
+            this.Text = "Добавление клиента";
+            add.BackgroundImage = Properties.Resources.add;
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
             type = true;

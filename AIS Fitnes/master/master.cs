@@ -46,13 +46,20 @@ namespace AIS_Fitnes
 
         private void button4_Click(object sender, EventArgs e)
         {
-            myConnection.Open();
-            string query = "DELETE FROM Тренера WHERE id = " + dataGridView1.CurrentRow.Cells[0].Value;
-            OleDbCommand command = new OleDbCommand(query, myConnection);
-            OleDbDataReader reader = command.ExecuteReader();
-            myConnection.Close();
+            const string message = "Вы уверены, что хотите удалить выбранного пользователя?";
+            const string caption = "Удаление";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            LoadData();
+            if (result == DialogResult.Yes)
+            {
+                myConnection.Open();
+                string query = "DELETE FROM Тренера WHERE id = " + dataGridView1.CurrentRow.Cells[0].Value;
+                OleDbCommand command = new OleDbCommand(query, myConnection);
+                OleDbDataReader reader = command.ExecuteReader();
+                myConnection.Close();
+
+                LoadData();
+            }
         }
 
         private void LoadData()
@@ -75,7 +82,7 @@ namespace AIS_Fitnes
                 data[data.Count - 1][1] = reader[1].ToString();
                 data[data.Count - 1][2] = reader[2].ToString();
                 data[data.Count - 1][3] = reader[3].ToString();
-                data[data.Count - 1][4] = reader[4].ToString();
+                data[data.Count - 1][4] = DateTime.Parse(reader[4].ToString()).ToShortDateString();
                 data[data.Count - 1][5] = reader[5].ToString();
                 data[data.Count - 1][6] = reader[6].ToString();
                 data[data.Count - 1][7] = reader[7].ToString();
@@ -100,12 +107,35 @@ namespace AIS_Fitnes
 
         private void master_Load(object sender, EventArgs e)
         {
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 9f, FontStyle.Bold); //жирный курсив размера 16
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray; //цвет текста
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; //цвет ячейки
             LoadData();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             button3_Click(sender, e);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1.Rows[i].Selected = false;
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    if (dataGridView1.Rows[i].Cells[j].Value != null)
+                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox1.Text))
+                        {
+                            dataGridView1.Rows[i].Selected = true;
+                            //dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                            break;
+                        }
+            }
         }
     }
 }

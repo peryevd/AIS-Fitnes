@@ -63,5 +63,17 @@ namespace AIS_Fitnes
             hall.Show();
             this.Hide();
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form info = new info();
+            info.Show();
+            this.Hide();
+        }
     }
 }

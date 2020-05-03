@@ -30,8 +30,6 @@
         {
             this.sub_id = new System.Windows.Forms.ComboBox();
             this.clients_id = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.add = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,6 +57,8 @@
             this.master_id = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox_contract = new System.Windows.Forms.GroupBox();
+            this.sub_price = new System.Windows.Forms.ComboBox();
+            this.sub_duration = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.sub_description = new System.Windows.Forms.TextBox();
@@ -75,13 +75,16 @@
             this.today = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.sub_duration = new System.Windows.Forms.ComboBox();
-            this.sub_price = new System.Windows.Forms.ComboBox();
-            this.date_start = new System.Windows.Forms.MaskedTextBox();
-            this.date_end = new System.Windows.Forms.MaskedTextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.all_price = new System.Windows.Forms.TextBox();
+            this.date_end = new System.Windows.Forms.MaskedTextBox();
+            this.date_start = new System.Windows.Forms.MaskedTextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox_master.SuspendLayout();
             this.groupBox_contract.SuspendLayout();
@@ -107,26 +110,6 @@
             this.clients_id.Size = new System.Drawing.Size(237, 21);
             this.clients_id.TabIndex = 38;
             this.clients_id.SelectionChangeCommitted += new System.EventHandler(this.client_id_SelectionChangeCommitted);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(353, 510);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Назад";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // add
-            // 
-            this.add.Location = new System.Drawing.Point(613, 510);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(75, 23);
-            this.add.TabIndex = 36;
-            this.add.Text = "Изменить";
-            this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // label3
             // 
@@ -417,6 +400,24 @@
             this.groupBox_contract.TabStop = false;
             this.groupBox_contract.Text = "Абонемент";
             // 
+            // sub_price
+            // 
+            this.sub_price.Enabled = false;
+            this.sub_price.FormattingEnabled = true;
+            this.sub_price.Location = new System.Drawing.Point(92, 240);
+            this.sub_price.Name = "sub_price";
+            this.sub_price.Size = new System.Drawing.Size(237, 21);
+            this.sub_price.TabIndex = 49;
+            // 
+            // sub_duration
+            // 
+            this.sub_duration.Enabled = false;
+            this.sub_duration.FormattingEnabled = true;
+            this.sub_duration.Location = new System.Drawing.Point(92, 214);
+            this.sub_duration.Name = "sub_duration";
+            this.sub_duration.Size = new System.Drawing.Size(237, 21);
+            this.sub_duration.TabIndex = 48;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -559,15 +560,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 25);
+            this.label4.Location = new System.Drawing.Point(6, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 53;
-            this.label4.Text = "Дата";
+            this.label4.Text = "Дата создания";
             // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.groupBox6.Controls.Add(this.label24);
             this.groupBox6.Controls.Add(this.all_price);
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.date_end);
@@ -577,36 +579,26 @@
             this.groupBox6.Controls.Add(this.label3);
             this.groupBox6.Location = new System.Drawing.Point(12, 450);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(335, 131);
+            this.groupBox6.Size = new System.Drawing.Size(335, 151);
             this.groupBox6.TabIndex = 47;
             this.groupBox6.TabStop = false;
             // 
-            // label19
+            // all_price
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 70);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 13);
-            this.label19.TabIndex = 49;
-            this.label19.Text = "Итоговая цена";
+            this.all_price.Enabled = false;
+            this.all_price.Location = new System.Drawing.Point(119, 67);
+            this.all_price.Name = "all_price";
+            this.all_price.Size = new System.Drawing.Size(173, 20);
+            this.all_price.TabIndex = 52;
             // 
-            // sub_duration
+            // date_end
             // 
-            this.sub_duration.Enabled = false;
-            this.sub_duration.FormattingEnabled = true;
-            this.sub_duration.Location = new System.Drawing.Point(92, 214);
-            this.sub_duration.Name = "sub_duration";
-            this.sub_duration.Size = new System.Drawing.Size(237, 21);
-            this.sub_duration.TabIndex = 48;
-            // 
-            // sub_price
-            // 
-            this.sub_price.Enabled = false;
-            this.sub_price.FormattingEnabled = true;
-            this.sub_price.Location = new System.Drawing.Point(92, 240);
-            this.sub_price.Name = "sub_price";
-            this.sub_price.Size = new System.Drawing.Size(237, 21);
-            this.sub_price.TabIndex = 49;
+            this.date_end.Location = new System.Drawing.Point(119, 41);
+            this.date_end.Mask = "00/00/0000";
+            this.date_end.Name = "date_end";
+            this.date_end.Size = new System.Drawing.Size(173, 20);
+            this.date_end.TabIndex = 51;
+            this.date_end.ValidatingType = typeof(System.DateTime);
             // 
             // date_start
             // 
@@ -619,39 +611,89 @@
             this.date_start.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.date_start_MaskInputRejected);
             this.date_start.Leave += new System.EventHandler(this.date_start_Leave);
             // 
-            // date_end
+            // label19
             // 
-            this.date_end.Location = new System.Drawing.Point(119, 41);
-            this.date_end.Mask = "00/00/0000";
-            this.date_end.Name = "date_end";
-            this.date_end.Size = new System.Drawing.Size(173, 20);
-            this.date_end.TabIndex = 51;
-            this.date_end.ValidatingType = typeof(System.DateTime);
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 70);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(82, 13);
+            this.label19.TabIndex = 49;
+            this.label19.Text = "Итоговая цена";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(252, 93);
+            this.button1.BackgroundImage = global::AIS_Fitnes.Properties.Resources.electronics;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(285, 93);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(42, 52);
             this.button1.TabIndex = 48;
-            this.button1.Text = "Рассчет";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // all_price
+            // button2
             // 
-            this.all_price.Enabled = false;
-            this.all_price.Location = new System.Drawing.Point(119, 67);
-            this.all_price.Name = "all_price";
-            this.all_price.Size = new System.Drawing.Size(173, 20);
-            this.all_price.TabIndex = 52;
+            this.button2.BackgroundImage = global::AIS_Fitnes.Properties.Resources.ui;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(353, 517);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 65);
+            this.button2.TabIndex = 37;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // add
+            // 
+            this.add.BackgroundImage = global::AIS_Fitnes.Properties.Resources.edit;
+            this.add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.add.FlatAppearance.BorderSize = 0;
+            this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add.Location = new System.Drawing.Point(617, 520);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(65, 65);
+            this.add.TabIndex = 36;
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(364, 588);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(39, 13);
+            this.label22.TabIndex = 50;
+            this.label22.Text = "Назад";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(624, 588);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(58, 13);
+            this.label23.TabIndex = 51;
+            this.label23.Text = "Изменить";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(231, 113);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 13);
+            this.label24.TabIndex = 52;
+            this.label24.Text = "Рассчет";
             // 
             // change_contract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(700, 587);
+            this.ClientSize = new System.Drawing.Size(700, 615);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox_hall);
@@ -677,6 +719,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -736,5 +779,8 @@
         private System.Windows.Forms.MaskedTextBox date_start;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox all_price;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
     }
 }

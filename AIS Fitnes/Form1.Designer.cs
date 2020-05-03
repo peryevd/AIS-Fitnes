@@ -33,38 +33,41 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button_subscription = new System.Windows.Forms.Button();
             this.button_trainer = new System.Windows.Forms.Button();
             this.button_client = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 100);
+            this.label1.Location = new System.Drawing.Point(245, 265);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Клиент";
+            this.label1.Text = "Клиенты";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 204);
+            this.label2.Location = new System.Drawing.Point(337, 265);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Тренер";
+            this.label2.Text = "Тренера";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 308);
+            this.label3.Location = new System.Drawing.Point(22, 428);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 7;
@@ -73,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 412);
+            this.label4.Location = new System.Drawing.Point(420, 265);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 8;
@@ -82,11 +85,68 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(710, 100);
+            this.label5.Location = new System.Drawing.Point(22, 100);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Диаграммы";
+            this.label5.Text = "Статистика";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(528, 265);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Залы";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(723, 428);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Выход";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(713, 100);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Информация";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.BackgroundImage = global::AIS_Fitnes.Properties.Resources.signs;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(703, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(85, 85);
+            this.button5.TabIndex = 13;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackgroundImage = global::AIS_Fitnes.Properties.Resources.city;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(502, 177);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 85);
+            this.button4.TabIndex = 10;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -94,7 +154,9 @@
             this.button3.BackgroundImage = global::AIS_Fitnes.Properties.Resources.growth;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(703, 12);
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(12, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 85);
             this.button3.TabIndex = 4;
@@ -108,7 +170,8 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Location = new System.Drawing.Point(703, 353);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(703, 340);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 85);
             this.button2.TabIndex = 3;
@@ -121,7 +184,9 @@
             this.button1.BackgroundImage = global::AIS_Fitnes.Properties.Resources.edit;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(12, 220);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(12, 340);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 85);
             this.button1.TabIndex = 2;
@@ -134,7 +199,9 @@
             this.button_subscription.BackgroundImage = global::AIS_Fitnes.Properties.Resources.contract;
             this.button_subscription.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button_subscription.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_subscription.Location = new System.Drawing.Point(12, 324);
+            this.button_subscription.FlatAppearance.BorderSize = 0;
+            this.button_subscription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_subscription.Location = new System.Drawing.Point(411, 177);
             this.button_subscription.Name = "button_subscription";
             this.button_subscription.Size = new System.Drawing.Size(85, 85);
             this.button_subscription.TabIndex = 1;
@@ -147,7 +214,9 @@
             this.button_trainer.BackgroundImage = global::AIS_Fitnes.Properties.Resources.gym;
             this.button_trainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button_trainer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_trainer.Location = new System.Drawing.Point(12, 116);
+            this.button_trainer.FlatAppearance.BorderSize = 0;
+            this.button_trainer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_trainer.Location = new System.Drawing.Point(320, 177);
             this.button_trainer.Name = "button_trainer";
             this.button_trainer.Size = new System.Drawing.Size(85, 85);
             this.button_trainer.TabIndex = 1;
@@ -160,34 +229,14 @@
             this.button_client.BackgroundImage = global::AIS_Fitnes.Properties.Resources.support;
             this.button_client.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button_client.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_client.Location = new System.Drawing.Point(12, 12);
+            this.button_client.FlatAppearance.BorderSize = 0;
+            this.button_client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_client.Location = new System.Drawing.Point(229, 177);
             this.button_client.Name = "button_client";
             this.button_client.Size = new System.Drawing.Size(85, 85);
             this.button_client.TabIndex = 0;
             this.button_client.UseVisualStyleBackColor = false;
             this.button_client.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImage = global::AIS_Fitnes.Properties.Resources.contract;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(703, 116);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 85);
-            this.button4.TabIndex = 10;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(729, 204);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Залы";
             // 
             // MainMenu
             // 
@@ -195,6 +244,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label5);
@@ -208,9 +260,12 @@
             this.Controls.Add(this.button_subscription);
             this.Controls.Add(this.button_trainer);
             this.Controls.Add(this.button_client);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главное меню";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +286,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label8;
     }
 }
 

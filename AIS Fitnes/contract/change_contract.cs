@@ -63,7 +63,8 @@ namespace AIS_Fitnes
                 groupBox_contract.Enabled = true;
                 groupBox_hall.Enabled = true;
 
-                add.Text = "Изменить";
+                label23.Text = "Изменить";
+                this.Text = "Изменение договора";
             }
             else
             {
@@ -72,8 +73,8 @@ namespace AIS_Fitnes
                 client_load();
                 master_load();
 
-                add.Text = "Создать";
-
+                label23.Text = "Создать";
+                this.Text = "Создание договора";
             }
           
         }

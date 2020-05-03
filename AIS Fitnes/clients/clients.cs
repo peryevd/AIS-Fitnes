@@ -31,7 +31,13 @@ namespace AIS_Fitnes
 
         private void clients_Load(object sender, EventArgs e)
         {
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 9f, FontStyle.Bold); //жирный курсив размера 16
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray; //цвет текста
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; //цвет ячейки
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -58,8 +64,8 @@ namespace AIS_Fitnes
         private void button4_Click(object sender, EventArgs e)
         {
 
-            const string message = "Вы уверены что хотите удалить элемент?";
-            const string caption = "Form Closing";
+            const string message = "Вы уверены, что хотите удалить выбранного пользователя?";
+            const string caption = "Удаление";
             var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -94,7 +100,7 @@ namespace AIS_Fitnes
                 data[data.Count - 1][1] = reader[1].ToString();
                 data[data.Count - 1][2] = reader[2].ToString();
                 data[data.Count - 1][3] = reader[3].ToString();
-                data[data.Count - 1][4] = reader[4].ToString();
+                data[data.Count - 1][4] = DateTime.Parse(reader[4].ToString()).ToShortDateString();
                 data[data.Count - 1][5] = reader[5].ToString();
                 data[data.Count - 1][6] = reader[6].ToString();
                 data[data.Count - 1][7] = reader[7].ToString();

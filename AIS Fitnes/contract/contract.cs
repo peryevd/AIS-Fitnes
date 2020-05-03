@@ -24,7 +24,13 @@ namespace AIS_Fitnes
 
         private void contract_Load(object sender, EventArgs e)
         {
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 9f, FontStyle.Bold); //жирный курсив размера 16
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray; //цвет текста
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; //цвет ячейки
         }
 
         private void LoadData()
@@ -44,12 +50,12 @@ namespace AIS_Fitnes
                 data.Add(new string[13]);
 
                 data[data.Count - 1][0] = reader[0].ToString();
-                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][1] = DateTime.Parse(reader[1].ToString()).ToShortDateString();
                 data[data.Count - 1][2] = reader[3].ToString();
                 data[data.Count - 1][3] = reader[5].ToString();
                 data[data.Count - 1][4] = reader[7].ToString();
-                data[data.Count - 1][5] = reader[10].ToString();
-                data[data.Count - 1][6] = reader[11].ToString();
+                data[data.Count - 1][5] = DateTime.Parse(reader[10].ToString()).ToShortDateString();
+                data[data.Count - 1][6] = DateTime.Parse(reader[11].ToString()).ToShortDateString();
                 data[data.Count - 1][7] = reader[12].ToString();
             }
 

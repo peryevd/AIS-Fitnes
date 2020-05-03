@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.button2 = new System.Windows.Forms.Button();
-            this.add = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,34 +42,30 @@
             this.label6 = new System.Windows.Forms.Label();
             this.sex = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.birth_date = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.phone = new System.Windows.Forms.MaskedTextBox();
             this.address = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.birth_date = new System.Windows.Forms.MaskedTextBox();
-            this.phone = new System.Windows.Forms.MaskedTextBox();
+            this.add = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label_ch = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 351);
+            this.button2.BackgroundImage = global::AIS_Fitnes.Properties.Resources.ui;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(24, 334);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(50, 50);
             this.button2.TabIndex = 27;
-            this.button2.Text = "Назад";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // add
-            // 
-            this.add.Location = new System.Drawing.Point(429, 351);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(75, 23);
-            this.add.TabIndex = 26;
-            this.add.Text = "Сохранить";
-            this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // label5
             // 
@@ -196,6 +191,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Личные данные";
             // 
+            // birth_date
+            // 
+            this.birth_date.Location = new System.Drawing.Point(129, 129);
+            this.birth_date.Mask = "00/00/0000";
+            this.birth_date.Name = "birth_date";
+            this.birth_date.Size = new System.Drawing.Size(60, 20);
+            this.birth_date.TabIndex = 30;
+            this.birth_date.ValidatingType = typeof(System.DateTime);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -207,10 +211,18 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(15, 206);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(489, 135);
+            this.groupBox2.Size = new System.Drawing.Size(489, 122);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Контакты";
+            // 
+            // phone
+            // 
+            this.phone.Location = new System.Drawing.Point(129, 29);
+            this.phone.Mask = "0 (999) 000-00-00";
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(96, 20);
+            this.phone.TabIndex = 31;
             // 
             // address
             // 
@@ -229,29 +241,45 @@
             this.label7.Text = "Адрес:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // birth_date
+            // add
             // 
-            this.birth_date.Location = new System.Drawing.Point(129, 129);
-            this.birth_date.Mask = "00/00/0000";
-            this.birth_date.Name = "birth_date";
-            this.birth_date.Size = new System.Drawing.Size(60, 20);
-            this.birth_date.TabIndex = 30;
-            this.birth_date.ValidatingType = typeof(System.DateTime);
+            this.add.BackColor = System.Drawing.Color.White;
+            this.add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.add.FlatAppearance.BorderSize = 0;
+            this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add.Location = new System.Drawing.Point(451, 334);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(50, 50);
+            this.add.TabIndex = 26;
+            this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // phone
+            // label8
             // 
-            this.phone.Location = new System.Drawing.Point(129, 29);
-            this.phone.Mask = "0 (999) 000-00-00";
-            this.phone.Name = "phone";
-            this.phone.Size = new System.Drawing.Size(96, 20);
-            this.phone.TabIndex = 31;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(29, 386);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Назад";
+            // 
+            // label_ch
+            // 
+            this.label_ch.AutoSize = true;
+            this.label_ch.Location = new System.Drawing.Point(448, 387);
+            this.label_ch.Name = "label_ch";
+            this.label_ch.Size = new System.Drawing.Size(39, 13);
+            this.label_ch.TabIndex = 34;
+            this.label_ch.Text = "Назад";
             // 
             // changeClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(513, 386);
+            this.ClientSize = new System.Drawing.Size(513, 408);
+            this.Controls.Add(this.label_ch);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
@@ -265,6 +293,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -290,5 +319,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox birth_date;
         private System.Windows.Forms.MaskedTextBox phone;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label_ch;
     }
 }

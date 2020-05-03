@@ -24,7 +24,6 @@ namespace AIS_Fitnes
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
             this.data = data;
-            add.Text = "Изменить";
             type = false;
         }
 
@@ -33,7 +32,6 @@ namespace AIS_Fitnes
             InitializeComponent();
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
-            add.Text = "Cоздать";
             type = true;
         }
 
@@ -52,10 +50,16 @@ namespace AIS_Fitnes
                 hall.Text = data[9];
                 price.Text = data[10];
                 load_hall();
+                this.Text = "Изменение тренера";
+                label11.Text = "Изменить";
+                add.BackgroundImage = Properties.Resources.edit;
             }
             else
             {
                 load_hall();
+                this.Text = "Добавление тренера";
+                label11.Text = "Добавить";
+                add.BackgroundImage = Properties.Resources.add;
             }
         }
 

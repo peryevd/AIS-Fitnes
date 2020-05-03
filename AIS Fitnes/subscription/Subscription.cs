@@ -31,7 +31,13 @@ namespace AIS_Fitnes
 
         private void Subscription_Load(object sender, EventArgs e)
         {
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 9f, FontStyle.Bold); //жирный курсив размера 16
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray; //цвет текста
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; //цвет ячейки
         }
 
         private void LoadData()
@@ -99,6 +105,29 @@ namespace AIS_Fitnes
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             cha_Click(sender, e);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    dataGridView1.Rows[i].Selected = false;
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                        if (dataGridView1.Rows[i].Cells[j].Value != null)
+                            if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox1.Text))
+                            {
+                                dataGridView1.Rows[i].Selected = true;
+                                //dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                                break;
+                            }
+                }
+            }
         }
     }
 }

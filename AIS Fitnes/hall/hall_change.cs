@@ -39,13 +39,16 @@ namespace AIS_Fitnes
         {
             if (!type)
             {
-                button1.Text = "Создать";
+                label4.Text = "Создать";
+                button1.BackgroundImage = Properties.Resources.add;
+                this.Text = "Создание зала";
             }
             else
             {
-                button1.Text = "Изменить";
-
+                label4.Text = "Изменить";
+                button1.BackgroundImage = Properties.Resources.edit;
                 title.Text = data[1];
+                this.Text = "Изменение зала";
                 description.Text = data[2];
             }
         }
