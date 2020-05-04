@@ -17,13 +17,6 @@ namespace AIS_Fitnes
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form clients = new clients();
-            clients.Show();
-            this.Hide();
-        }
-
         private void button_subscription_Click(object sender, EventArgs e)
         {
             Form subscription = new Subscription();
@@ -38,41 +31,55 @@ namespace AIS_Fitnes
             this.Hide();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void MainMenu_Load(object sender, EventArgs e)
         {
-            Form contract = new contract();
-            contract.Show();
+           
+        }
+
+        private void button_client_Click(object sender, EventArgs e)
+        {
+            Form clients = new clients();
+            clients.Show();
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form stats = new stats();
-            stats.Show();
-            this.Hide();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void button_hall_Click(object sender, EventArgs e)
         {
             Form hall = new hall();
             hall.Show();
             this.Hide();
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
+        private void button_stats_Click(object sender, EventArgs e)
         {
-           
+            Form stats = new stats();
+            stats.Show();
+            this.Hide();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button_info_Click(object sender, EventArgs e)
         {
             Form info = new info();
             info.Show();
+            this.Hide();
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+            const string message = "Вы уверены, что хотите завершить работу?";
+            const string caption = "Завершение работы";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void button_contract_Click(object sender, EventArgs e)
+        {
+            Form contract = new contract();
+            contract.Show();
             this.Hide();
         }
     }

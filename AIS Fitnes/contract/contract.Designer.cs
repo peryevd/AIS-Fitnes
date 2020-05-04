@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_sub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_clients = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_trainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_subscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,14 +47,6 @@
             this.del = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_sub = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_clients = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_trainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_subscription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,63 @@
             this.dataGridView1.Size = new System.Drawing.Size(730, 238);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.id.Width = 25;
+            // 
+            // date_sub
+            // 
+            this.date_sub.HeaderText = "Дата создания";
+            this.date_sub.Name = "date_sub";
+            this.date_sub.ReadOnly = true;
+            this.date_sub.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // name_clients
+            // 
+            this.name_clients.HeaderText = "Клиент";
+            this.name_clients.Name = "name_clients";
+            this.name_clients.ReadOnly = true;
+            this.name_clients.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // name_trainer
+            // 
+            this.name_trainer.HeaderText = "Тренер";
+            this.name_trainer.Name = "name_trainer";
+            this.name_trainer.ReadOnly = true;
+            this.name_trainer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // name_subscription
+            // 
+            this.name_subscription.HeaderText = "Абонемент";
+            this.name_subscription.Name = "name_subscription";
+            this.name_subscription.ReadOnly = true;
+            this.name_subscription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // date_start
+            // 
+            this.date_start.HeaderText = "Начало действия";
+            this.date_start.Name = "date_start";
+            this.date_start.ReadOnly = true;
+            this.date_start.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // date_end
+            // 
+            this.date_end.HeaderText = "Конец действия";
+            this.date_end.Name = "date_end";
+            this.date_end.ReadOnly = true;
+            this.date_end.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // label1
             // 
@@ -181,63 +238,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.id.Width = 25;
-            // 
-            // date_sub
-            // 
-            this.date_sub.HeaderText = "Дата создания";
-            this.date_sub.Name = "date_sub";
-            this.date_sub.ReadOnly = true;
-            this.date_sub.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // name_clients
-            // 
-            this.name_clients.HeaderText = "Клиент";
-            this.name_clients.Name = "name_clients";
-            this.name_clients.ReadOnly = true;
-            this.name_clients.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // name_trainer
-            // 
-            this.name_trainer.HeaderText = "Тренер";
-            this.name_trainer.Name = "name_trainer";
-            this.name_trainer.ReadOnly = true;
-            this.name_trainer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // name_subscription
-            // 
-            this.name_subscription.HeaderText = "Абонемент";
-            this.name_subscription.Name = "name_subscription";
-            this.name_subscription.ReadOnly = true;
-            this.name_subscription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // date_start
-            // 
-            this.date_start.HeaderText = "Начало действия";
-            this.date_start.Name = "date_start";
-            this.date_start.ReadOnly = true;
-            this.date_start.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // date_end
-            // 
-            this.date_end.HeaderText = "Конец действия";
-            this.date_end.Name = "date_end";
-            this.date_end.ReadOnly = true;
-            this.date_end.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Цена";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // contract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +255,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.add);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "contract";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Договора";

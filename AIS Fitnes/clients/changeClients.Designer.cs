@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_back = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,18 +54,18 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // btn_back
             // 
-            this.button2.BackgroundImage = global::AIS_Fitnes.Properties.Resources.ui;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(24, 334);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 50);
-            this.button2.TabIndex = 27;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_back.BackgroundImage = global::AIS_Fitnes.Properties.Resources.ui;
+            this.btn_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_back.FlatAppearance.BorderSize = 0;
+            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_back.Location = new System.Drawing.Point(24, 334);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(50, 50);
+            this.btn_back.TabIndex = 27;
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // label5
             // 
@@ -282,7 +282,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.add);
             this.Name = "changeClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -299,7 +299,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox email;

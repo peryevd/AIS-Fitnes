@@ -61,42 +61,40 @@ namespace AIS_Fitnes
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form clients = new clients();
-            clients.Show();
-            this.Close();
-        }
-
         private void add_Click(object sender, EventArgs e)
         {
-
-            if (type)
+            try
             {
-                string querry = "INSERT INTO Клиенты (first_name, last_name, middle_name, birth_date, sex, phone, email, address) " +
-                "VALUES ('" + first_name.Text.ToString() + "','" + last_name.Text.ToString() + "','" + middle_name.Text.ToString() + "','" + birth_date.Text.ToString() + "','" + sex.Text.ToString() + "','"  + phone.Text.ToString() + "','" + email.Text.ToString() + "','" + address.Text.ToString() + "')";
-                OleDbCommand command = new OleDbCommand(querry, myConnection);
-                command.ExecuteNonQuery();
+                if (type)
+                {
+                    string querry = "INSERT INTO Клиенты (first_name, last_name, middle_name, birth_date, sex, phone, email, address) " +
+                    "VALUES ('" + first_name.Text.ToString() + "','" + last_name.Text.ToString() + "','" + middle_name.Text.ToString() + "','" + birth_date.Text.ToString() + "','" + sex.Text.ToString() + "','" + phone.Text.ToString() + "','" + email.Text.ToString() + "','" + address.Text.ToString() + "')";
+                    OleDbCommand command = new OleDbCommand(querry, myConnection);
+                    command.ExecuteNonQuery();
 
-                myConnection.Close();
-                Form clients = new clients();
-                clients.Show();
-                this.Close();
+                    myConnection.Close();
+                    Form clients = new clients();
+                    clients.Show();
+                    this.Close();
+                }
+                else
+                {
+                    string querry = "UPDATE Клиенты SET first_name = '" + first_name.Text.ToString() + "', last_name = '" + last_name.Text.ToString() + "', middle_name = '" + middle_name.Text.ToString() + "', birth_date = '" + Convert.ToDateTime(birth_date.Text) + "', sex = '" + sex.Text + "', phone = '" + phone.Text.ToString() + "', email = '" + email.Text.ToString() + "', address = '" + address.Text.ToString() + "' WHERE id = " + data[0];
+
+                    OleDbCommand command = new OleDbCommand(querry, myConnection);
+                    command.ExecuteNonQuery();
+
+                    updateAll();
+                    myConnection.Close();
+                    Form clients = new clients();
+                    clients.Show();
+                    this.Close();
+                }
             }
-            else
+            catch
             {
-                string querry = "UPDATE Клиенты SET first_name = '" + first_name.Text.ToString() + "', last_name = '" + last_name.Text.ToString() + "', middle_name = '" + middle_name.Text.ToString() + "', birth_date = '" + Convert.ToDateTime(birth_date.Text) + "', sex = '" + sex.Text + "', phone = '" + phone.Text.ToString() + "', email = '" + email.Text.ToString() + "', address = '" + address.Text.ToString() + "' WHERE id = " + data[0];
-
-                OleDbCommand command = new OleDbCommand(querry, myConnection);
-                command.ExecuteNonQuery();
-
-                updateAll();
-                myConnection.Close();
-                Form clients = new clients();
-                clients.Show();
-                this.Close();
+                MessageBox.Show("Операция недоступна, введены некорректные данные");
             }
-
         }
 
         private void first_name_TextChanged(object sender, EventArgs e)
@@ -119,6 +117,13 @@ namespace AIS_Fitnes
             string querry = "UPDATE Договора SET name_clients = '" + last_name.Text.ToString()  + "' WHERE id_clients = " + data[0];
             OleDbCommand command = new OleDbCommand(querry, myConnection);
             command.ExecuteNonQuery();
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Form clients = new clients();
+            clients.Show();
+            this.Close();
         }
     }
 }

@@ -51,23 +51,23 @@ namespace AIS_Fitnes
         {
             Chart1.Series.Clear();
             // Форматировать диаграмму
-            Chart1.BackColor = Color.Gray;
-            Chart1.BackSecondaryColor = Color.WhiteSmoke;
-            Chart1.BackGradientStyle = GradientStyle.DiagonalRight;
+            //Chart1.BackColor = Color.Gray;
+            //Chart1.BackSecondaryColor = Color.WhiteSmoke;
+           //Chart1.BackGradientStyle = GradientStyle.DiagonalRight;
 
             Chart1.BorderlineDashStyle = ChartDashStyle.Solid;
             Chart1.BorderlineColor = Color.Gray;
             Chart1.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
 
             // Форматировать область диаграммы
-            Chart1.ChartAreas[0].BackColor = Color.Wheat;
+            //Chart1.ChartAreas[0].BackColor = Color.Wheat;
 
             //Добавить и форматировать заголовок
             //Chart1.Titles[1].Font = new Font("Utopia", 16);
 
             if (type == 0)
             {
-                Chart1.Series.Add(new Series("ColumnSeries")
+                Chart1.Series.Add(new Series("График")
                 {
                     ChartType = SeriesChartType.Pie
 
@@ -79,25 +79,25 @@ namespace AIS_Fitnes
             }
             if (type == 1)
             {
-                Chart1.Series.Add(new Series("ColumnSeries")
+                Chart1.Series.Add(new Series("График")
                 {
                     
                 });
                 Chart1.ChartAreas[0].Area3DStyle.Enable3D = false;
 
                 Chart1.Titles.Clear();
-                Chart1.Titles.Add("Заполненость залов");
+                Chart1.Titles.Add("Занятость тренеров");
             }
             if (type == 2)
             {
-                Chart1.Series.Add(new Series("ColumnSeries")
+                Chart1.Series.Add(new Series("График")
                 {
                     ChartType = SeriesChartType.Line
                 });
                 Chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
 
                 Chart1.Titles.Clear();
-                Chart1.Titles.Add("Занятость тренеров");
+                Chart1.Titles.Add("Заполненость залов");
             }
 
             // Salary series data
@@ -105,7 +105,7 @@ namespace AIS_Fitnes
             //string[] xValues = { "France", "Canada", "Germany", "USA", "Italy" };
 
             secure();
-            Chart1.Series["ColumnSeries"].Points.DataBindXY(data2, count_subscr);
+            Chart1.Series["График"].Points.DataBindXY(data2, count_subscr);
 
             //Chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
         }
@@ -275,6 +275,11 @@ namespace AIS_Fitnes
             LoadDataMaster();
 
             draw(data2, count_subscr, 1);
+        }
+
+        private void Chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

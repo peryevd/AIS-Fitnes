@@ -22,13 +22,6 @@ namespace AIS_Fitnes
             LoadData();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form mainmenu = Application.OpenForms[0];
-            this.Close();
-            mainmenu.Show();
-        }
-
         private void clients_Load(object sender, EventArgs e)
         {
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -38,46 +31,6 @@ namespace AIS_Fitnes
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.ColumnHeadersDefaultCellStyle.Font.FontFamily, 9f, FontStyle.Bold); //жирный курсив размера 16
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray; //цвет текста
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; //цвет ячейки
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            changeClients f = new changeClients();
-            f.Show();
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string[] arrayClient = new string[dataGridView1.ColumnCount];
-
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)
-            {
-                arrayClient[i] = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[i].Value.ToString();
-            }
-
-            changeClients f = new changeClients(arrayClient);
-            f.Show();
-            this.Close();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-            const string message = "Вы уверены, что хотите удалить выбранного пользователя?";
-            const string caption = "Удаление";
-            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                myConnection.Open();
-                string query = "DELETE FROM Клиенты WHERE id = " + dataGridView1.CurrentRow.Cells[0].Value;
-                OleDbCommand command = new OleDbCommand(query, myConnection);
-                OleDbDataReader reader = command.ExecuteReader();
-                myConnection.Close();
-
-                LoadData();
-            }         
         }
 
         private void LoadData()
@@ -114,11 +67,6 @@ namespace AIS_Fitnes
                 dataGridView1.Rows.Add(s);
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             {
@@ -139,7 +87,53 @@ namespace AIS_Fitnes
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            button3_Click(sender, e);
+            btn_change_Click(sender, e);
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            changeClients f = new changeClients();
+            f.Show();
+            this.Close();
+        }
+
+        private void btn_change_Click(object sender, EventArgs e)
+        {
+            string[] arrayClient = new string[dataGridView1.ColumnCount];
+
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+            {
+                arrayClient[i] = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[i].Value.ToString();
+            }
+
+            changeClients f = new changeClients(arrayClient);
+            f.Show();
+            this.Close();
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Form mainmenu = Application.OpenForms[0];
+            this.Close();
+            mainmenu.Show();
+        }
+
+        private void btn_del_Click(object sender, EventArgs e)
+        {
+            const string message = "Вы уверены, что хотите удалить выбранного пользователя?";
+            const string caption = "Удаление";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                myConnection.Open();
+                string query = "DELETE FROM Клиенты WHERE id = " + dataGridView1.CurrentRow.Cells[0].Value;
+                OleDbCommand command = new OleDbCommand(query, myConnection);
+                OleDbDataReader reader = command.ExecuteReader();
+                myConnection.Close();
+
+                LoadData();
+            }
         }
     }  
 }
